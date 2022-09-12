@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             app:contentInsetStart="0dp" style="@style/groupStyledeep_purple_300">
-            <LinearLayout android:id="@+id/linearRowaluno"
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/linearRowaluno"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_13pxv"
                 android:layout_marginEnd="@dimen/_43pxh"
@@ -27,7 +27,10 @@
                     android:layout_weight="0.4"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="@{cadastroOneVM.cadastroOneModel.txtALUNO}"
-                    style="@style/txtLexendPetaregular10" tools:text="@string/lbl_aluno"/>
+                    style="@style/txtLexendPetaregular10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/lbl_aluno"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtWeburl"
                     android:layout_height="wrap_content"
@@ -35,8 +38,13 @@
                     android:layout_weight="0.6"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="@{cadastroOneVM.cadastroOneModel.txtWeburl}"
-                    style="@style/txtLexendPetaregular10" tools:text="@string/lbl_educa_me"/>
-            </LinearLayout>
+                    style="@style/txtLexendPetaregular10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/lbl_educa_me"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
@@ -124,7 +132,7 @@
                     android:layout_marginEnd="@dimen/_19pxh"
                     android:background="@drawable/rectangle_bg_white_a700_border_purple_801_radius_5"
                     android:ellipsize="end"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:singleLine="true"
                     android:padding="5dp"
                     android:text="@={cadastroOneVM.cadastroOneModel.etRectangleThreeValue}"
@@ -153,7 +161,7 @@
                     android:layout_marginEnd="@dimen/_19pxh"
                     android:background="@drawable/rectangle_bg_white_a700_border_purple_801_radius_5"
                     android:ellipsize="end"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:singleLine="true"
                     android:padding="5dp"
                     android:text="@={cadastroOneVM.cadastroOneModel.etRectangleSevenValue}"

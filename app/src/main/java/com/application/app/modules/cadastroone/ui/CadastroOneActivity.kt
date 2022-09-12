@@ -23,12 +23,12 @@ class CadastroOneActivity :
     BaseActivity<ActivityCadastroOneBinding>(R.layout.activity_cadastro_one) {
     private val viewModel: CadastroOneVM by viewModels<CadastroOneVM>()
 
-    override fun onInitialized(): Unit {
+    override fun onInitialized() {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         binding.cadastroOneVM = viewModel
     }
 
-    override fun setUpClicks(): Unit {
+    override fun setUpClicks() {
 
         binding.btnRegistrar.setOnClickListener {
             gravarAluno()
