@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="professoresVM" type="com.application.app.modules.professores.data.viewmodel.ProfessoresVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearProfessores"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyledeep_purple_300">
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnrectangleten"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStyledeep_purple_300">
+            <View
+                android:background="@drawable/rectangle_bg_purple_800_radius_2"
+                android:id="@+id/viewRectangleTen"
+                android:layout_height="@dimen/_4pxv"
+                android:layout_marginEnd="@dimen/_21pxh"
+                android:layout_marginStart="@dimen/_21pxh"
+                android:layout_marginTop="@dimen/_9pxv" android:layout_width="@dimen/_20pxh"/>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowrectangleeleven"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_21pxh"
+                android:layout_marginStart="@dimen/_21pxh"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <View
+                    android:background="@drawable/rectangle_bg_purple_800_radius_2"
+                    android:id="@+id/viewRectangleEleven"
+                    android:layout_height="@dimen/_4pxv"
+                    android:layout_marginBottom="@dimen/_4pxv"
+                    android:layout_marginTop="@dimen/_4pxv" android:layout_width="@dimen/_20pxh"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtWeburl"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_207pxh"
+                    android:layout_weight="0.77"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{professoresVM.professoresModel.txtWeburl}"
+                    style="@style/txtLexendPetaregular10" tools:text="@string/lbl_educa_me"/>
+            </LinearLayout>
+            <View
+                android:background="@drawable/rectangle_bg_purple_800_radius_2"
+                android:id="@+id/viewRectangleTwelve"
+                android:layout_height="@dimen/_4pxv"
+                android:layout_marginBottom="@dimen/_9pxv"
+                android:layout_marginEnd="@dimen/_21pxh"
+                android:layout_marginStart="@dimen/_21pxh" android:layout_width="@dimen/_20pxh"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnmatemtica"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylegray_50cornerRadius">
+            <LinearLayout android:id="@+id/linearRowmatemtica"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStylewhite_1">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtMATEMTICA"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_27pxv"
+                    android:layout_marginStart="@dimen/_31pxh"
+                    android:layout_marginTop="@dimen/_19pxv"
+                    android:layout_weight="0.78"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{professoresVM.professoresModel.txtMATEMTICA}"
+                    style="@style/txtLexendPetaregular20" tools:text="@string/lbl_matem_tica"/>
+                <ImageView android:id="@+id/imageUser"
+                    android:layout_height="@dimen/_50pxh"
+                    android:layout_marginBottom="@dimen/_7pxv"
+                    android:layout_marginEnd="@dimen/_39pxh"
+                    android:layout_marginStart="@dimen/_68pxh"
+                    android:layout_marginTop="@dimen/_9pxv"
+                    android:layout_width="@dimen/_49pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_user"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerProfessores"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_19pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                itemSpace="@{@dimen/_4pxh}" tools:itemCount="3" tools:listitem="@layout/row_professores"/>
+            <EditText
+                android:background="@drawable/rectangle_bg_deep_purple_300_radius_20"
+                android:drawablePadding="@dimen/_15pxh"
+                android:drawableStart="@drawable/img_arrowleft"
+                android:ellipsize="end"
+                android:hint="@string/lbl_voltar"
+                android:id="@+id/etBotoVoltar" android:inputType="text"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_22pxv"
+                android:layout_marginEnd="@dimen/_11pxh"
+                android:layout_marginStart="@dimen/_11pxh"
+                android:layout_marginTop="@dimen/_419pxv"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/_24pxv"
+                android:paddingEnd="@dimen/_22pxh"
+                android:paddingStart="@dimen/_21pxh"
+                android:paddingTop="@dimen/_23pxv"
+                android:singleLine="true"
+                android:text="@={professoresVM.professoresModel.etBotoVoltarValue}"
+                android:textColorHint="@color/white_A700"
+                style="@style/etSolidRounded" tools:ignore="Autofill"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

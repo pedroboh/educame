@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="cadastroVM" type="com.application.app.modules.cadastro.data.viewmodel.CadastroVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearColumnaluno"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyledeep_purple_300">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:contentInsetStart="0dp" style="@style/groupStyledeep_purple_300">
+            <LinearLayout android:id="@+id/linearRowaluno"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_13pxv"
+                android:layout_marginEnd="@dimen/_43pxh"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_marginTop="@dimen/_13pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtALUNO"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{cadastroVM.cadastroModel.txtALUNO}"
+                    style="@style/txtLexendPetaregular10" tools:text="@string/lbl_aluno"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtWeburl"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_178pxh"
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{cadastroVM.cadastroModel.txtWeburl}"
+                    style="@style/txtLexendPetaregular10" tools:text="@string/lbl_educa_me"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <FrameLayout android:id="@+id/frameStackrectanglethirteen"
+            android:layout_height="@dimen/_766pxv"
+            android:layout_width="match_parent" style="@style/groupStyledeep_purple_300">
+            <View
+                android:background="@drawable/rectangle_bg_gray_50_radius_tr_40"
+                android:id="@+id/viewRectangleThirteen"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_762pxh"
+                android:layout_marginBottom="@dimen/_4pxv" android:layout_width="@dimen/_360pxh"/>
+            <LinearLayout android:id="@+id/linearColumnweburlOne"
+                android:layout_gravity="bottom|center"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_23pxh"
+                android:layout_marginStart="@dimen/_23pxh"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStyledeep_purple_300cornerRadius">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtWeburlOne"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_34pxh"
+                    android:layout_marginStart="@dimen/_34pxh"
+                    android:layout_marginTop="@dimen/_13pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{cadastroVM.cadastroModel.txtWeburlOne}"
+                    style="@style/txtLexendPetaregular22" tools:text="@string/lbl_educa_me"/>
+                <TextView android:gravity="center_horizontal"
+                    android:id="@+id/txtEnviamosumema"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_29pxh"
+                    android:layout_marginStart="@dimen/_34pxh"
+                    android:layout_marginTop="@dimen/_35pxv"
+                    android:layout_width="match_parent"
+                    android:text="@{cadastroVM.cadastroModel.txtEnviamosumema}"
+                    style="@style/txtLexendPetaregular14" tools:text="@string/msg_enviamos_um_ema"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtVOLTAR"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_450pxv"
+                    android:layout_marginEnd="@dimen/_34pxh"
+                    android:layout_marginStart="@dimen/_34pxh"
+                    android:layout_marginTop="@dimen/_42pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{cadastroVM.cadastroModel.txtVOLTAR}"
+                    style="@style/txtLexendPetaregular14"
+                    textUnderline="true" tools:text="@string/lbl_voltar2"/>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

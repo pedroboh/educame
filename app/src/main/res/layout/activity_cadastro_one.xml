@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="cadastroOneVM" type="com.application.app.modules.cadastroone.data.viewmodel.CadastroOneVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearCadastroOne"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyledeep_purple_300">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:contentInsetStart="0dp" style="@style/groupStyledeep_purple_300">
+            <LinearLayout android:id="@+id/linearRowaluno"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_13pxv"
+                android:layout_marginEnd="@dimen/_43pxh"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_marginTop="@dimen/_13pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtALUNO"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{cadastroOneVM.cadastroOneModel.txtALUNO}"
+                    style="@style/txtLexendPetaregular10" tools:text="@string/lbl_aluno"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtWeburl"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_178pxh"
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{cadastroOneVM.cadastroOneModel.txtWeburl}"
+                    style="@style/txtLexendPetaregular10" tools:text="@string/lbl_educa_me"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/linearColumn"
+            style="@style/groupStylegray_50cornerRadius"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearColumnweburlOne"
+                style="@style/groupStyledeep_purple_300cornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_23pxh"
+                android:layout_marginTop="@dimen/_101pxv"
+                android:layout_marginEnd="@dimen/_23pxh"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtWeburlOne"
+                    style="@style/txtLexendPetaregular22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_13pxv"
+                    android:layout_marginEnd="@dimen/_21pxh"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{cadastroOneVM.cadastroOneModel.txtWeburlOne}"
+                    tools:text="@string/lbl_educa_me" />
+
+                <TextView
+                    android:id="@+id/txtEmail"
+                    style="@style/txtLexendPetaregular14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_34pxv"
+                    android:layout_marginEnd="@dimen/_21pxh"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{cadastroOneVM.cadastroOneModel.txtEmail}"
+                    tools:text="@string/lbl_email" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    style="@style/etSolidRoundedOutline_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_2pxv"
+                    android:layout_marginEnd="@dimen/_19pxh"
+                    android:background="@drawable/rectangle_bg_white_a700_border_purple_801_radius_5"
+                    android:ellipsize="end"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:padding="5dp"
+                    android:text="@={cadastroOneVM.cadastroOneModel.etRectangleTwoValue}"
+                    tools:ignore="Autofill" />
+
+                <TextView
+                    android:id="@+id/txtSenha"
+                    style="@style/txtLexendPetaregular14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_11pxv"
+                    android:layout_marginEnd="@dimen/_21pxh"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{cadastroOneVM.cadastroOneModel.txtSenha}"
+                    tools:text="@string/lbl_senha" />
+
+                <EditText
+                    android:id="@+id/etSenha"
+                    style="@style/etSolidRoundedOutline_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_2pxv"
+                    android:layout_marginEnd="@dimen/_19pxh"
+                    android:background="@drawable/rectangle_bg_white_a700_border_purple_801_radius_5"
+                    android:ellipsize="end"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:padding="5dp"
+                    android:text="@={cadastroOneVM.cadastroOneModel.etRectangleThreeValue}"
+                    tools:ignore="Autofill" />
+
+                <TextView
+                    android:id="@+id/txtConfirmarsenha"
+                    style="@style/txtLexendPetaregular14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_19pxv"
+                    android:layout_marginEnd="@dimen/_21pxh"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{cadastroOneVM.cadastroOneModel.txtConfirmarsenha}"
+                    tools:text="@string/lbl_confirmar_senha" />
+
+                <EditText
+                    android:id="@+id/etConfirmaSenha"
+                    style="@style/etSolidRoundedOutline_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_2pxv"
+                    android:layout_marginEnd="@dimen/_19pxh"
+                    android:background="@drawable/rectangle_bg_white_a700_border_purple_801_radius_5"
+                    android:ellipsize="end"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:padding="5dp"
+                    android:text="@={cadastroOneVM.cadastroOneModel.etRectangleSevenValue}"
+                    tools:ignore="Autofill" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRegistrar"
+                    style="@style/btnSolidRoundedOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_36pxv"
+                    android:layout_marginEnd="@dimen/_19pxh"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_30pxh"
+                    android:paddingTop="@dimen/_6pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingBottom="@dimen/_6pxv"
+                    android:singleLine="true"
+                    android:text="@string/lbl_registrar"
+                    android:textAllCaps="false"
+                    tools:text="@string/lbl_registrar" />
+
+                <TextView
+                    android:id="@+id/txtVOLTAR"
+                    style="@style/txtLexendPetaregular14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_21pxh"
+                    android:layout_marginTop="@dimen/_2pxv"
+                    android:layout_marginEnd="@dimen/_21pxh"
+                    android:layout_marginBottom="@dimen/_20pxv"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{cadastroOneVM.cadastroOneModel.txtVOLTAR}"
+                    tools:text="@string/lbl_voltar2" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

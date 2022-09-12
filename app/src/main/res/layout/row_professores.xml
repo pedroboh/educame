@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="professoresRowModel" type="com.application.app.modules.professores.data.model.ProfessoresRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearColumnsrgio"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_1">
+        <LinearLayout android:id="@+id/linearRowsrgio"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15pxh"
+            android:layout_marginStart="@dimen/_15pxh"
+            android:layout_marginTop="@dimen/_4pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <TextView android:ellipsize="end" android:id="@+id/txtSrgio"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15pxv"
+                android:layout_weight="0.69" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{professoresRowModel.txtSrgio}"
+                style="@style/txtLexendPetaregular20" tools:text="@string/lbl_s_rgio"/>
+            <ImageView android:id="@+id/imageUserOne"
+                android:layout_height="@dimen/_32pxh"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_marginStart="@dimen/_132pxh"
+                android:layout_width="@dimen/_40pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_user"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBarRatingbar"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_6pxv"
+            android:layout_marginEnd="@dimen/_19pxh"
+            android:layout_marginStart="@dimen/_19pxh"
+            android:layout_marginTop="@dimen/_1pxv"
+            android:layout_width="wrap_content" android:numStars="5"
+            android:progressTint="@color/bluegray_100"
+            android:rating="5" style="@style/Widget.AppCompat.RatingBar.Small"/>
+    </LinearLayout>
+</layout>
