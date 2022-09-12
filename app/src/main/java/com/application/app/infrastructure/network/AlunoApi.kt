@@ -1,8 +1,8 @@
 package com.lastcode.educame.infrastructure.network
 
-import com.lastcode.educame.viewmodels.AlunoAuthModel
-import com.lastcode.educame.viewmodels.AlunoCadastroModel
-import com.lastcode.educame.viewmodels.AlunoModel
+import com.application.app.viewmodels.AlunoAuthModel
+import com.application.app.viewmodels.AlunoCadastroModel
+import com.application.app.viewmodels.AlunoModel
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

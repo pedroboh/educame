@@ -1,4 +1,4 @@
-package com.lastcode.educame.viewmodels
+package com.application.app.viewmodels
 
 data class AlunoLoginModel(
     val id : String = "",

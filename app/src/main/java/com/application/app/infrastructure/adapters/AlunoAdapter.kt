@@ -1,13 +1,5 @@
 package com.lastcode.educame.infrastructure.adapters
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.lastcode.educame.R
-import com.lastcode.educame.viewmodels.AlunoModel
-
 class AlunoAdapter {
 }
 //foi usado para testes em outro projeto, usar como referencia pra construir ProfessorAdapter

@@ -1,6 +1,7 @@
-package com.lastcode.educame.viewmodels
+package com.application.app.viewmodels
 
 
+import com.application.app.viewmodels.AlunoLoginModel
 import com.squareup.moshi.Json
 
 data class AlunoAuthModel(

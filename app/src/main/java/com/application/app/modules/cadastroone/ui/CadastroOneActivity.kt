@@ -7,13 +7,11 @@ import androidx.activity.viewModels
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityCadastroOneBinding
-import com.application.app.extensions.RestApiService
-import com.application.app.modules.cadastroone.data.model.AlunoCadastro
 import com.application.app.modules.cadastroone.`data`.viewmodel.CadastroOneVM
 import com.application.app.modules.matrias.ui.MatRiasActivity
 import com.lastcode.educame.infrastructure.network.AlunoApi
 import com.lastcode.educame.infrastructure.network.RetrofitHelper
-import com.lastcode.educame.viewmodels.AlunoCadastroModel
+import com.application.app.viewmodels.AlunoCadastroModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -104,16 +102,19 @@ class CadastroOneActivity :
 //                Log.i("EVENTO_API","retornoApi2: Successo: ID Aluno: ${result.registerViewModel.id}")
 //                Log.i("EVENTO_API", result.body())
                 Log.i("EVENTO_API", "retornoApi2: Sucesso")
-                withContext(Dispatchers.Main){
-                    atualizarTela()
 
-                }
-                if (result.token.isEmpty().not()){
+
+                withContext(Dispatchers.Main){
+                    if (result.token.isEmpty().not()){
                     val toast = Toast.makeText(this@CadastroOneActivity, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG)
                     toast.show()
-                }else{
-                    val toast = Toast.makeText(this@CadastroOneActivity, "Erro em cadastrar usuário!", Toast.LENGTH_LONG)
-                    toast.show()
+                        Log.i("EVENTO_API", "CHEGUEI AQUI")
+                    }else{
+                        val toast = Toast.makeText(this@CadastroOneActivity, "Erro em cadastrar usuário!", Toast.LENGTH_LONG)
+                        toast.show()
+                    }
+                    atualizarTela()
+
                 }
 
 
