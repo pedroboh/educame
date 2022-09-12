@@ -99,16 +99,16 @@ class CadastroOneActivity :
                 val result = RetrofitHelper.getInstance().create(AlunoApi::class.java).gravarAluno(aluno)
 //                val resultId = result.body()?.aluno?.id
 
-                Log.i("EVENTO_API", "TOKEN: ${result.token}")
+//                Log.i("EVENTO_API", "TOKEN: ${result.token}")
 //                Log.i("EVENTO_API", "TOKEN: ${result.body()?.token.toString()}")
-                Log.i("EVENTO_API","retornoApi2: Successo: ID Aluno: ${result.registerViewModel.id}")
+//                Log.i("EVENTO_API","retornoApi2: Successo: ID Aluno: ${result.registerViewModel.id}")
 //                Log.i("EVENTO_API", result.body())
                 Log.i("EVENTO_API", "retornoApi2: Sucesso")
                 withContext(Dispatchers.Main){
                     atualizarTela()
 
                 }
-                if (result.token.isNullOrEmpty().not()){
+                if (result.token.isEmpty().not()){
                     val toast = Toast.makeText(this@CadastroOneActivity, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG)
                     toast.show()
                 }else{
