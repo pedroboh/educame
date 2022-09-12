@@ -77,13 +77,17 @@ class CadastroOneActivity :
 
     }
 
-    private fun montarAluno(): AlunoCadastroModel {
-        val email: String = binding.etEmail.text.toString()
+    private fun montarAluno(): AlunoCadastroModel? {
         val password: String = binding.etSenha.text.toString()
+        val passwordConfirm: String = binding.etConfirmaSenha.text.toString()
+        if (password.equals(passwordConfirm)) {
+            val email: String = binding.etEmail.text.toString()
+            val aluno = AlunoCadastroModel(email = email, password = password)
 
-        val aluno = AlunoCadastroModel(email = email, password = password)
-
-        return aluno
+            return aluno
+        } else {
+            return null
+        }
 
     }
 
@@ -91,38 +95,42 @@ class CadastroOneActivity :
 
         val aluno = montarAluno()
 
-        val coroutineScope = CoroutineScope(Dispatchers.IO)
-        coroutineScope.launch {
-            try {
-                val result = RetrofitHelper.getInstance().create(AlunoApi::class.java).gravarAluno(aluno)
-//                val resultId = result.body()?.aluno?.id
+        if (aluno != null) {
+            val coroutineScope = CoroutineScope(Dispatchers.IO)
+            coroutineScope.launch {
+                try {
+                    val result = RetrofitHelper.getInstance().create(AlunoApi::class.java).gravarAluno(aluno)
+    //                val resultId = result.body()?.aluno?.id
 
-//                Log.i("EVENTO_API", "TOKEN: ${result.token}")
-//                Log.i("EVENTO_API", "TOKEN: ${result.body()?.token.toString()}")
-//                Log.i("EVENTO_API","retornoApi2: Successo: ID Aluno: ${result.registerViewModel.id}")
-//                Log.i("EVENTO_API", result.body())
-                Log.i("EVENTO_API", "retornoApi2: Sucesso")
+    //                Log.i("EVENTO_API", "TOKEN: ${result.token}")
+    //                Log.i("EVENTO_API", "TOKEN: ${result.body()?.token.toString()}")
+    //                Log.i("EVENTO_API","retornoApi2: Successo: ID Aluno: ${result.registerViewModel.id}")
+    //                Log.i("EVENTO_API", result.body())
+                    Log.i("EVENTO_API", "retornoApi2: Sucesso")
 
 
-                withContext(Dispatchers.Main){
-                    if (result.token.isEmpty().not()){
-                    val toast = Toast.makeText(this@CadastroOneActivity, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG)
-                    toast.show()
-                        Log.i("EVENTO_API", "CHEGUEI AQUI")
-                    }else{
-                        val toast = Toast.makeText(this@CadastroOneActivity, "Erro em cadastrar usuário!", Toast.LENGTH_LONG)
+                    withContext(Dispatchers.Main){
+                        if (result.token.isEmpty().not()){
+                        val toast = Toast.makeText(this@CadastroOneActivity, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG)
                         toast.show()
+                            Log.i("EVENTO_API", "CHEGUEI AQUI")
+                        }else{
+                            val toast = Toast.makeText(this@CadastroOneActivity, "Erro em cadastrar usuário!", Toast.LENGTH_LONG)
+                            toast.show()
+                        }
+                        atualizarTela()
+
                     }
-                    atualizarTela()
 
+
+                }catch (e: Exception){
+                    Log.i("EVENTO_API","retornoApi3: ${e.printStackTrace().toString()}" )
+                    val toast = Toast.makeText(this@CadastroOneActivity, "Erro em cadastrar usuário!", Toast.LENGTH_LONG)
+                    toast.show()
                 }
-
-
-            }catch (e: Exception){
-                Log.i("EVENTO_API","retornoApi3: ${e.printStackTrace().toString()}" )
-                val toast = Toast.makeText(this@CadastroOneActivity, "Erro em cadastrar usuário!", Toast.LENGTH_LONG)
-                toast.show()
             }
+        } else {
+            Toast.makeText(this@CadastroOneActivity, "Senha diferente da confirmação", Toast.LENGTH_SHORT).show()
         }
 
     }
