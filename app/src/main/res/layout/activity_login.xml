@@ -123,44 +123,54 @@
                     android:text="@={loginVM.loginModel.etPasswordValue}"
                     android:textColorHint="@color/purple_800"
                     style="@style/etSolidRoundedOutline" tools:ignore="Autofill"/>
-                <LinearLayout android:gravity="start"
+
+                <LinearLayout
                     android:id="@+id/linearRowlinetwo"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_23pxh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
                     android:layout_marginStart="@dimen/_23pxh"
                     android:layout_marginTop="@dimen/_16pxv"
-                    android:layout_width="wrap_content" android:orientation="horizontal">
-                    <FrameLayout android:id="@+id/frameStacklinetwo"
-                        android:layout_height="@dimen/_15pxv"
-                        android:layout_width="@dimen/_15pxh" style="@style/groupStylewhite_A700">
-                        <View android:background="@color/black_900"
-                            android:id="@+id/lineLineTwo"
-                            android:layout_gravity="start"
-                            android:layout_height="@dimen/_10pxv"
-                            android:layout_marginBottom="@dimen/_2pxv"
-                            android:layout_marginEnd="@dimen/_10pxh"
-                            android:layout_marginStart="@dimen/_2pxh"
-                            android:layout_marginTop="@dimen/_2pxv" android:layout_width="@dimen/_9pxh"/>
-                        <View android:background="@color/black_900"
-                            android:id="@+id/lineLineThree"
-                            android:layout_gravity="top|start"
-                            android:layout_height="@dimen/_10pxv"
-                            android:layout_marginBottom="@dimen/_10pxv"
-                            android:layout_marginEnd="@dimen/_10pxh"
-                            android:layout_marginStart="@dimen/_2pxh"
-                            android:layout_marginTop="@dimen/_2pxv" android:layout_width="@dimen/_8pxh"/>
-                    </FrameLayout>
-                    <TextView android:ellipsize="end"
-                        android:id="@+id/txtMantenhamecon"
+                    android:layout_marginEnd="@dimen/_23pxh"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+
+                    <!--                    <FrameLayout android:id="@+id/frameStacklinetwo"-->
+                    <!--                        android:layout_height="@dimen/_15pxv"-->
+                    <!--                        android:layout_width="@dimen/_15pxh" style="@style/groupStylewhite_A700">-->
+
+                    <!--                        <View-->
+                    <!--                            android:id="@+id/lineLineTwo"-->
+                    <!--                            android:layout_width="17dp"-->
+                    <!--                            android:layout_height="14dp"-->
+                    <!--                            android:layout_gravity="start"-->
+                    <!--                            android:layout_marginStart="@dimen/_2pxh"-->
+                    <!--                            android:layout_marginTop="@dimen/_2pxv"-->
+                    <!--                            android:layout_marginEnd="@dimen/_10pxh"-->
+                    <!--                            android:layout_marginBottom="@dimen/_2pxv"-->
+                    <!--                            android:background="@color/black_900" />-->
+                    <!--                        <View android:background="@color/black_900"-->
+                    <!--                            android:id="@+id/lineLineThree"-->
+                    <!--                            android:layout_gravity="top|start"-->
+                    <!--                            android:layout_height="@dimen/_10pxv"-->
+                    <!--                            android:layout_marginBottom="@dimen/_10pxv"-->
+                    <!--                            android:layout_marginEnd="@dimen/_10pxh"-->
+                    <!--                            android:layout_marginStart="@dimen/_2pxh"-->
+                    <!--                            android:layout_marginTop="@dimen/_2pxv" android:layout_width="@dimen/_8pxh"/>-->
+                    <!--                    </FrameLayout>-->
+                    <CheckBox
+                        android:id="@+id/cbxMantenhameconectado"
+                        style="@style/txtLexendPetaregular9_1"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_2pxv"
                         android:layout_marginStart="@dimen/_3pxh"
                         android:layout_marginTop="@dimen/_2pxv"
+                        android:layout_marginBottom="@dimen/_2pxv"
                         android:layout_weight="0.91"
-                        android:layout_width="0dp"
+                        android:ellipsize="end"
                         android:singleLine="true"
                         android:text="@{loginVM.loginModel.txtMantenhamecon}"
-                        style="@style/txtLexendPetaregular9_1" tools:text="@string/msg_mantenha_me_con"/>
+                        tools:text="@string/msg_mantenha_me_con" />
                 </LinearLayout>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtEsqueciminhas"
@@ -189,9 +199,9 @@
                     android:text="@string/lbl_entrar"
                     android:textAllCaps="false"
                     style="@style/btnSolidRoundedOutline" tools:text="@string/lbl_entrar"/>
-                <EditText android:ellipsize="end"
+                <TextView android:ellipsize="end"
                     android:hint="@string/lbl_cadastre_se"
-                    android:id="@+id/etGroupFortyThree"
+                    android:id="@+id/tvCadastrese"
                     android:inputType="text"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_20pxh"
@@ -205,72 +215,98 @@
                     android:textColorHint="@color/white_A700"
                     style="@style/etLexendPetaregular9"
                     textUnderline="true" tools:ignore="Autofill"/>
-                <LinearLayout android:id="@+id/linearRowellipsetwo"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_331pxv"
-                    android:layout_marginEnd="@dimen/_20pxh"
+
+                <LinearLayout
+                    android:id="@+id/linearRowellipsetwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginStart="@dimen/_20pxh"
                     android:layout_marginTop="@dimen/_6pxv"
-                    android:layout_width="match_parent" android:orientation="horizontal">
-                    <FrameLayout android:id="@+id/frameStackellipsetwo"
-                        android:layout_height="@dimen/_45pxv" android:layout_width="@dimen/_48pxh">
+                    android:layout_marginEnd="@dimen/_20pxh"
+                    android:layout_marginBottom="@dimen/_331pxv"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/frameStackellipsetwo"
+                        android:layout_width="@dimen/_48pxh"
+                        android:layout_height="@dimen/_45pxv">
+
                         <View
-                            android:background="@drawable/rectangle_bg_white_a700_radius_24"
                             android:id="@+id/viewEllipseTwo"
+                            android:layout_width="@dimen/_48pxh"
+                            android:layout_height="@dimen/_45pxh"
                             android:layout_gravity="start"
-                            android:layout_height="@dimen/_45pxh" android:layout_width="@dimen/_48pxh"/>
-                        <ImageView android:id="@+id/imageGoogle"
-                            android:layout_gravity="center"
+                            android:background="@drawable/rectangle_bg_white_a700_radius_24" />
+
+                        <ImageView
+                            android:id="@+id/imageGoogle"
+                            android:layout_width="@dimen/_30pxh"
                             android:layout_height="@dimen/_30pxh"
-                            android:layout_marginBottom="@dimen/_8pxv"
-                            android:layout_marginEnd="@dimen/_9pxh"
+                            android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_9pxh"
                             android:layout_marginTop="@dimen/_7pxv"
-                            android:layout_width="@dimen/_30pxh"
+                            android:layout_marginEnd="@dimen/_9pxh"
+                            android:layout_marginBottom="@dimen/_8pxv"
                             android:scaleType="fitXY"
                             android:src="@drawable/img_google"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_google"/>
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_google" />
                     </FrameLayout>
+
                     <FrameLayout
                         android:id="@+id/frameStackellipsethree"
+                        android:layout_width="@dimen/_48pxh"
                         android:layout_height="@dimen/_45pxv"
-                        android:layout_marginStart="@dimen/_44pxh" android:layout_width="@dimen/_48pxh">
+                        android:layout_marginStart="@dimen/_44pxh">
+
                         <View
-                            android:background="@drawable/rectangle_bg_white_a700_radius_24"
                             android:id="@+id/viewEllipseThree"
+                            android:layout_width="@dimen/_48pxh"
+                            android:layout_height="@dimen/_45pxh"
                             android:layout_gravity="start"
-                            android:layout_height="@dimen/_45pxh" android:layout_width="@dimen/_48pxh"/>
-                        <ImageView android:id="@+id/imageInstagram"
-                            android:layout_gravity="center"
+                            android:background="@drawable/rectangle_bg_white_a700_radius_24" />
+
+                        <ImageView
+                            android:id="@+id/imageInstagram"
+                            android:layout_width="@dimen/_30pxh"
                             android:layout_height="@dimen/_30pxh"
-                            android:layout_marginBottom="@dimen/_7pxv"
-                            android:layout_marginEnd="@dimen/_9pxh"
+                            android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_9pxh"
                             android:layout_marginTop="@dimen/_8pxv"
-                            android:layout_width="@dimen/_30pxh"
+                            android:layout_marginEnd="@dimen/_9pxh"
+                            android:layout_marginBottom="@dimen/_7pxv"
                             android:scaleType="fitXY"
                             android:src="@drawable/img_instagram"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_instagram"/>
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_instagram" />
                     </FrameLayout>
-                    <FrameLayout android:id="@+id/frameStackellipsefour"
+
+                    <FrameLayout
+                        android:id="@+id/frameStackellipsefour"
+                        android:layout_width="@dimen/_48pxh"
                         android:layout_height="@dimen/_45pxv"
-                        android:layout_marginStart="@dimen/_47pxh" android:layout_width="@dimen/_48pxh">
+                        android:layout_marginStart="@dimen/_47pxh">
+
                         <View
-                            android:background="@drawable/rectangle_bg_white_a700_radius_24"
                             android:id="@+id/viewEllipseFour"
+                            android:layout_width="@dimen/_48pxh"
+                            android:layout_height="@dimen/_45pxh"
                             android:layout_gravity="start"
-                            android:layout_height="@dimen/_45pxh" android:layout_width="@dimen/_48pxh"/>
-                        <ImageView android:id="@+id/imageTwitter"
-                            android:layout_gravity="center"
+                            android:background="@drawable/rectangle_bg_white_a700_radius_24" />
+
+                        <ImageView
+                            android:id="@+id/imageTwitter"
+                            android:layout_width="@dimen/_35pxh"
                             android:layout_height="@dimen/_30pxh"
-                            android:layout_marginBottom="@dimen/_7pxv"
-                            android:layout_marginEnd="@dimen/_7pxh"
+                            android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_6pxh"
                             android:layout_marginTop="@dimen/_8pxv"
-                            android:layout_width="@dimen/_35pxh"
+                            android:layout_marginEnd="@dimen/_7pxh"
+                            android:layout_marginBottom="@dimen/_7pxv"
                             android:scaleType="fitXY"
                             android:src="@drawable/img_twitter"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_twitter"/>
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_twitter" />
                     </FrameLayout>
                 </LinearLayout>
             </LinearLayout>

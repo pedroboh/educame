@@ -8,6 +8,7 @@ import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityCadastroOneBinding
 import com.application.app.modules.cadastroone.`data`.viewmodel.CadastroOneVM
+import com.application.app.modules.login.ui.LoginActivity
 import com.application.app.modules.matrias.ui.MatRiasActivity
 import com.lastcode.educame.infrastructure.network.AlunoApi
 import com.lastcode.educame.infrastructure.network.RetrofitHelper
@@ -61,7 +62,7 @@ class CadastroOneActivity :
         }
 
         binding.txtVOLTAR.setOnClickListener {
-            val i = Intent(this, MatRiasActivity::class.java)
+            val i = Intent(this, LoginActivity::class.java)
             startActivity(i)
         }
     }
