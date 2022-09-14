@@ -166,6 +166,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
@@ -221,8 +222,10 @@ class ProfessoresActivity :
         position: Int,
         item: ProfessoresRowModel
     ): Unit {
-        when (view.id) {
-        }
+//        when (view.id) {
+//        }
+        Log.i("EVENTO_API","itemclicado")
+        Toast.makeText(this, item.txtIdProfessor, Toast.LENGTH_SHORT).show()
     }
 
     private fun carregarDados(adapter: ProfessoresAdapter){
