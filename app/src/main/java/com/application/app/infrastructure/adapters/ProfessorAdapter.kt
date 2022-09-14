@@ -5,11 +5,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 import com.application.app.dto.ProfessorModel
+import com.application.app.modules.professores.data.model.ProfessoresRowModel
 
 class ProfessorAdapter (
     //foi usado para testes em outro projeto, usar como referencia pra construir ProfessorAdapter
 //class AlunoAdapter (
-    private val dataset: List<ProfessorModel>
+    private val dataset: List<ProfessoresRowModel>
 ) : RecyclerView.Adapter<ProfessorAdapter.ProfessorViewHolder>() {
 
     class ProfessorViewHolder(view: View, listener : onItemClickListener) :
@@ -35,7 +36,7 @@ class ProfessorAdapter (
 //
     override fun onBindViewHolder(holder: ProfessorViewHolder, position: Int) {
         val professor = dataset[position]
-        holder.tvNomeProfessor.text = professor.nome
+        holder.tvNomeProfessor.text = professor.txtNomeProfessor
 //        holder.tvAlunoNome.text = aluno.nome
 //        holder.tvAlunoConsole.text = aluno.email
 //        holder.tvAlunoUrlVideo.text = aluno.password
@@ -63,7 +64,7 @@ class ProfessorAdapter (
         mListener = listener
     }
 //
-    fun getItem(position : Int) : ProfessorModel{
+    fun getItem(position : Int) : ProfessoresRowModel{
         return dataset.get(position)
     }
 }

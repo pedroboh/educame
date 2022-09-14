@@ -4,7 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.application.app.R
 
-class SessionManager(context : Context) {
+
+class SessionManager(context: Context) {
     private var preferences: SharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
 
     companion object{

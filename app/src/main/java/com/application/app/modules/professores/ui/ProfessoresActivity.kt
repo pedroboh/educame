@@ -17,7 +17,6 @@ import com.lastcode.educame.infrastructure.network.RetrofitHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -25,12 +24,14 @@ import kotlin.Unit
 class ProfessoresActivity :
     BaseActivity<ActivityProfessoresBinding>(R.layout.activity_professores) {
     private val viewModel: ProfessoresVM by viewModels<ProfessoresVM>()
+    private var listaProfessores = mutableListOf<ProfessoresRowModel>()
+
 
 
     override fun onInitialized(): Unit {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         val professoresAdapter =
-            ProfessoresAdapter(viewModel.professoresList.value ?: mutableListOf())
+            ProfessoresAdapter(viewModel.professoresList.value ?: mutableListOf(),this)
         binding.recyclerProfessores.adapter = professoresAdapter
         professoresAdapter.setOnItemClickListener(
             object : ProfessoresAdapter.OnItemClickListener {
@@ -39,11 +40,16 @@ class ProfessoresActivity :
                 }
             }
         )
+        carregarDados(professoresAdapter)
+
         viewModel.professoresList.observe(this) {
-            professoresAdapter.updateData(it)
+
+            professoresAdapter.updateData(listaProfessores)
         }
+
         binding.professoresVM = viewModel
     }
+
 
     override fun setUpClicks(): Unit {
     }
@@ -57,16 +63,24 @@ class ProfessoresActivity :
         }
     }
 
-    private fun carregarDados(){
+    private fun carregarDados(adapter: ProfessoresAdapter){
         CoroutineScope(Dispatchers.IO).launch() {
             try {
                 val sessionManager = SessionManager(this@ProfessoresActivity)
                 var token = sessionManager.fetchAuthToken()
                 val result = RetrofitHelper.getInstance().create(MateriasApi::class.java).getProfessores(token, "5372477c-c4c6-4b0c-adb9-9e2975193598")
-                Log.i("EVENTO_API","retornoApi: Success: ${result.size} registros recuperados")
+                val professores = result.professores
+                Log.i("EVENTO_API","retornoApi: Success: ${professores.size} registros recuperados")
 
-                result.forEach { viewModel.professoresList.value?.add((it)) }
 
+                professores.forEach {
+                    val professor = ProfessoresRowModel(txtEmailProfessor = it.email, txtIdProfessor = it.id, txtNomeProfessor = it.nome)
+                    listaProfessores.add(professor)
+                    viewModel.professoresList.value?.add((professor))
+                    Log.i("EVENTO_API","adicionado um professor")
+                }
+                viewModel.professoresList.value?.addAll(listaProfessores)
+                adapter.updateData(listaProfessores)
 //                withContext(Dispatchers.Main){
 //                    atualizarTela()
 //                }
@@ -78,7 +92,7 @@ class ProfessoresActivity :
     }
 
     override fun onResume() {
-        carregarDados()
+//        carregarDados()
         super.onResume()
     }
 
@@ -92,4 +106,7 @@ class ProfessoresActivity :
             return destIntent
         }
     }
+
+
+
 }
