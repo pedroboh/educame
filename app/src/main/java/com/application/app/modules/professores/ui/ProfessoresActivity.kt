@@ -178,6 +178,7 @@ import com.lastcode.educame.infrastructure.network.RetrofitHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -241,10 +242,15 @@ class ProfessoresActivity :
                     Log.i("EVENTO_API","adicionado um professor")
                 }
                 viewModel.professoresList.value?.addAll(listaProfessores)
-                adapter.updateData(listaProfessores)
-//                withContext(Dispatchers.Main){
+                Log.i("EVENTO_API","log1")
+
+
+//                onRestart()
+                withContext(Dispatchers.Main){
+                    adapter.updateData(listaProfessores)
+                    Log.i("EVENTO_API","log2")
 //                    atualizarTela()
-//                }
+                }
             }catch (e: Exception){
                 Log.i("EVENTO_API","retornoApi2:  + ${e.message}")
             }

@@ -46,7 +46,9 @@ class ProfessoresAdapter(
 
   public fun updateData(newData: List<ProfessoresRowModel>) {
     list = newData
+    Log.i("EVENTO_API", "log3")
     notifyDataSetChanged()
+    Log.i("EVENTO_API", "log4")
   }
 
   fun setOnItemClickListener(clickListener: OnItemClickListener) {
