@@ -1,6 +1,73 @@
-package com.application.app.infrastructure.adapters
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.application.app.R
+import com.application.app.dto.ProfessorModel
 
-class ProfessorAdapter {
+class ProfessorAdapter (
+    //foi usado para testes em outro projeto, usar como referencia pra construir ProfessorAdapter
+//class AlunoAdapter (
+    private val dataset: List<ProfessorModel>
+) : RecyclerView.Adapter<ProfessorAdapter.ProfessorViewHolder>() {
+
+    class ProfessorViewHolder(view: View, listener : onItemClickListener) :
+        RecyclerView.ViewHolder(view) {
+
+        val tvNomeProfessor: TextView = view.findViewById(R.id.txtNomeProfessor)
+
+        //testando click no item
+        init {
+            view.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
+        }
+
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfessorViewHolder {
+        val adapterLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.row_professores, parent, false)
+
+        return ProfessorViewHolder(adapterLayout, mListener)
+    }
+//
+    override fun onBindViewHolder(holder: ProfessorViewHolder, position: Int) {
+        val professor = dataset[position]
+        holder.tvNomeProfessor.text = professor.nome
+//        holder.tvAlunoNome.text = aluno.nome
+//        holder.tvAlunoConsole.text = aluno.email
+//        holder.tvAlunoUrlVideo.text = aluno.password
+//        holder.tvAlunoNota.text = aluno.createdAt
+
+
+//        if(!gameFeedback.urlImagem.equals("")) {
+//            Picasso.get().load(gameFeedback.urlImagem).into(holder.ivAlunoFoto)
+//        }
+    }
+//
+    override fun getItemCount() = dataset.size
+//
+//
+//    //Tentando setar clicks nos itens
+    private lateinit var mListener : onItemClickListener
+
+    interface onItemClickListener{
+
+        fun onItemClick(position: Int)
+
+    }
+//
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+//
+    fun getItem(position : Int) : ProfessorModel{
+        return dataset.get(position)
+    }
+}
+
     //foi usado para testes em outro projeto, usar como referencia pra construir ProfessorAdapter
 //class AlunoAdapter (
 //    private val dataset: List<AlunoModel>
@@ -63,4 +130,3 @@ class ProfessorAdapter {
 //    fun getItem(position : Int) : AlunoModel{
 //        return dataset.get(position)
 //    }
-}
