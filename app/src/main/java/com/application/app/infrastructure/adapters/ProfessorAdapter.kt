@@ -7,20 +7,22 @@ import com.application.app.R
 import com.application.app.dto.ProfessorModel
 import com.application.app.modules.professores.data.model.ProfessoresRowModel
 
-class ProfessorAdapter (
+class ProfessorAdapter(
     //foi usado para testes em outro projeto, usar como referencia pra construir ProfessorAdapter
 //class AlunoAdapter (
     private val dataset: List<ProfessoresRowModel>
 ) : RecyclerView.Adapter<ProfessorAdapter.ProfessorViewHolder>() {
 
-    class ProfessorViewHolder(view: View, listener : onItemClickListener) :
+    class ProfessorViewHolder(view: View, listener: onItemClickListener) :
         RecyclerView.ViewHolder(view) {
 
         val tvNomeProfessor: TextView = view.findViewById(R.id.txtNomeProfessor)
+        val tvIdProfessor: TextView = view.findViewById(R.id.txtIdProfessor)
+        val tvEmailProfessor: TextView = view.findViewById(R.id.txtEmailProfessor)
 
         //testando click no item
         init {
-            view.setOnClickListener{
+            view.setOnClickListener {
                 listener.onItemClick(adapterPosition)
             }
         }
@@ -33,10 +35,13 @@ class ProfessorAdapter (
 
         return ProfessorViewHolder(adapterLayout, mListener)
     }
-//
+
+    //
     override fun onBindViewHolder(holder: ProfessorViewHolder, position: Int) {
         val professor = dataset[position]
         holder.tvNomeProfessor.text = professor.txtNomeProfessor
+        holder.tvEmailProfessor.text = professor.txtEmailProfessor
+        holder.tvIdProfessor.text = professor.txtIdProfessor
 //        holder.tvAlunoNome.text = aluno.nome
 //        holder.tvAlunoConsole.text = aluno.email
 //        holder.tvAlunoUrlVideo.text = aluno.password
@@ -47,29 +52,33 @@ class ProfessorAdapter (
 //            Picasso.get().load(gameFeedback.urlImagem).into(holder.ivAlunoFoto)
 //        }
     }
-//
+
+    //
     override fun getItemCount() = dataset.size
-//
+
+    //
 //
 //    //Tentando setar clicks nos itens
-    private lateinit var mListener : onItemClickListener
+    private lateinit var mListener: onItemClickListener
 
-    interface onItemClickListener{
+    interface onItemClickListener {
 
         fun onItemClick(position: Int)
 
     }
-//
-    fun setOnItemClickListener(listener: onItemClickListener){
+
+    //
+    fun setOnItemClickListener(listener: onItemClickListener) {
         mListener = listener
     }
-//
-    fun getItem(position : Int) : ProfessoresRowModel{
+
+    //
+    fun getItem(position: Int): ProfessoresRowModel {
         return dataset.get(position)
     }
 }
 
-    //foi usado para testes em outro projeto, usar como referencia pra construir ProfessorAdapter
+//foi usado para testes em outro projeto, usar como referencia pra construir ProfessorAdapter
 //class AlunoAdapter (
 //    private val dataset: List<AlunoModel>
 //) : RecyclerView.Adapter<AlunoAdapter.AlunoViewHolder>() {

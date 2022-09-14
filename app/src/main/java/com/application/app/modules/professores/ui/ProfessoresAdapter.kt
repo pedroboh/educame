@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 import com.application.app.databinding.RowProfessoresBinding
@@ -57,10 +58,12 @@ class ProfessoresAdapter(
       view: View,
       position: Int,
       item: ProfessoresRowModel
-    ) {
-    }
+    )
   }
 
+  private fun makeToast(message : String){
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+  }
 
   private fun carregarDados(){
     CoroutineScope(Dispatchers.IO).launch() {
