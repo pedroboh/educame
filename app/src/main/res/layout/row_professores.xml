@@ -13,7 +13,7 @@
             android:layout_marginStart="@dimen/_15pxh"
             android:layout_marginTop="@dimen/_4pxv"
             android:layout_width="match_parent" android:orientation="horizontal">
-            <TextView android:ellipsize="end" android:id="@+id/txtSrgio"
+            <TextView android:ellipsize="end" android:id="@+id/txtNomeProfessor"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15pxv"
                 android:layout_weight="0.69" android:layout_width="0dp"

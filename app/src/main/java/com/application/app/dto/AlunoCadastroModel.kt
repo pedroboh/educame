@@ -1,4 +1,4 @@
-package com.application.app.viewmodels
+package com.application.app.dto
 
 data class AlunoCadastroModel (
     val email : String = "",

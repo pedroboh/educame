@@ -98,7 +98,7 @@
                         android:layout_marginTop="@dimen/_5pxv"
                         android:layout_width="match_parent" android:orientation="horizontal">
                         <TextView android:ellipsize="end"
-                            android:id="@+id/txtSrgio"
+                            android:id="@+id/txtNomeProfessor"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_14pxv"
                             android:layout_weight="0.69"

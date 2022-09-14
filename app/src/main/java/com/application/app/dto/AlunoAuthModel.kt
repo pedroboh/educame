@@ -1,7 +1,6 @@
-package com.application.app.viewmodels
+package com.application.app.dto
 
 
-import com.application.app.viewmodels.AlunoLoginModel
 import com.squareup.moshi.Json
 
 data class AlunoAuthModel(

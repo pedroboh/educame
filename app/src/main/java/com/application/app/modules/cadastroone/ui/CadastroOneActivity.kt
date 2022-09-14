@@ -9,16 +9,14 @@ import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityCadastroOneBinding
 import com.application.app.modules.cadastroone.`data`.viewmodel.CadastroOneVM
 import com.application.app.modules.login.ui.LoginActivity
-import com.application.app.modules.matrias.ui.MatRiasActivity
 import com.lastcode.educame.infrastructure.network.AlunoApi
 import com.lastcode.educame.infrastructure.network.RetrofitHelper
-import com.application.app.viewmodels.AlunoCadastroModel
+import com.application.app.dto.AlunoCadastroModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.String
-import kotlin.Unit
 
 class CadastroOneActivity :
     BaseActivity<ActivityCadastroOneBinding>(R.layout.activity_cadastro_one) {
@@ -34,31 +32,6 @@ class CadastroOneActivity :
         binding.btnRegistrar.setOnClickListener {
             gravarAluno()
 
-
-
-
-//            val aluno = AlunoCadastro(
-//                email = binding.etEmail.text.toString(),
-//                senha = binding.etSenha.text.toString()
-//            )
-//            val apiService = RestApiService()
-//            Log.i("debugapi", aluno.toString())
-//
-//            apiService.addAluno(aluno) {
-//                if (it?.id != null) {
-//                    Toast.makeText(
-//                        this@CadastroOneActivity,
-//                        "Aluno Cadastrado com id ${it.id}",
-//                        Toast.LENGTH_LONG
-//                    ).show()
-//                } else {
-//                    Toast.makeText(
-//                        this@CadastroOneActivity,
-//                        "Erro em cadastrar aluno",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//            }
         }
 
         binding.txtVOLTAR.setOnClickListener {
@@ -72,8 +45,6 @@ class CadastroOneActivity :
         binding.etSenha.text?.clear()
         binding.etConfirmaSenha.text?.clear()
 
-
-//        hideKeyboard()
 
 
     }
@@ -101,12 +72,7 @@ class CadastroOneActivity :
             coroutineScope.launch {
                 try {
                     val result = RetrofitHelper.getInstance().create(AlunoApi::class.java).gravarAluno(aluno)
-    //                val resultId = result.body()?.aluno?.id
 
-    //                Log.i("EVENTO_API", "TOKEN: ${result.token}")
-    //                Log.i("EVENTO_API", "TOKEN: ${result.body()?.token.toString()}")
-    //                Log.i("EVENTO_API","retornoApi2: Successo: ID Aluno: ${result.registerViewModel.id}")
-    //                Log.i("EVENTO_API", result.body())
                     Log.i("EVENTO_API", "retornoApi2: Sucesso")
 
 
