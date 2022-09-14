@@ -24,12 +24,12 @@ class ProfessoresAdapter(
   var list: List<ProfessoresRowModel>,
   var context: Context
 ) : RecyclerView.Adapter<ProfessoresAdapter.RowProfessoresVH>() {
-  private var clickListener: OnItemClickListener? = null
+//  private var clickListener: OnItemClickListener? = null
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowProfessoresVH {
 //    carregarDados()
     val view=LayoutInflater.from(parent.context).inflate(R.layout.row_professores,parent,false)
-    return RowProfessoresVH(view)
+    return RowProfessoresVH(view, mListener)
   }
 
   override fun onBindViewHolder(holder: RowProfessoresVH, position: Int) {
@@ -51,17 +51,17 @@ class ProfessoresAdapter(
     Log.i("EVENTO_API", "log4")
   }
 
-  fun setOnItemClickListener(clickListener: OnItemClickListener) {
-    this.clickListener = clickListener
-  }
+//  fun setOnItemClickListener(clickListener: OnItemClickListener) {
+//    this.clickListener = clickListener
+//  }
 
-  interface OnItemClickListener {
-    fun onItemClick(
-      view: View,
-      position: Int,
-      item: ProfessoresRowModel
-    )
-  }
+//  interface OnItemClickListener {
+//    fun onItemClick(
+//      view: View,
+//      position: Int,
+//      item: ProfessoresRowModel
+//    )
+//  }
 
   private fun makeToast(message : String){
     Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
@@ -95,9 +95,26 @@ class ProfessoresAdapter(
     }
 //     return emptyList()
   }
+  private lateinit var mListener : onItemClickListener
+
+  interface onItemClickListener{
+
+    fun onItemClick(position: Int)
+
+  }
+
+  fun setOnItemClickListener(listener: onItemClickListener){
+    mListener = listener
+  }
+
+  fun getItem(position : Int) : ProfessoresRowModel{
+    return list.get(position)
+  }
+
 
   inner class RowProfessoresVH(
-    view: View
+    view: View,
+    listener : onItemClickListener
   ) : RecyclerView.ViewHolder(view) {
     val binding: RowProfessoresBinding = RowProfessoresBinding.bind(itemView)
   }

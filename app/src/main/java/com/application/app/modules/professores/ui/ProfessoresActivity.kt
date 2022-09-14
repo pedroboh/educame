@@ -159,15 +159,15 @@ package com.application.app.modules.professores.ui
 //}
 
 
-
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.view.get
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityProfessoresBinding
@@ -190,19 +190,18 @@ class ProfessoresActivity :
     private var listaProfessores = mutableListOf<ProfessoresRowModel>()
 
 
-
     override fun onInitialized(): Unit {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         val professoresAdapter =
-            ProfessoresAdapter(viewModel.professoresList.value ?: mutableListOf(),this)
+            ProfessoresAdapter(viewModel.professoresList.value ?: mutableListOf(), this)
         binding.recyclerProfessores.adapter = professoresAdapter
-        professoresAdapter.setOnItemClickListener(
-            object : ProfessoresAdapter.OnItemClickListener {
-                override fun onItemClick(view: View, position: Int, item: ProfessoresRowModel) {
-                    onClickRecyclerProfessores(view, position, item)
-                }
-            }
-        )
+//        professoresAdapter.setOnItemClickListener(
+//            object : ProfessoresAdapter.OnItemClickListener {
+//                override fun onItemClick(view: View, position: Int, item: ProfessoresRowModel) {
+//                    onClickRecyclerProfessores(view, position, item)
+//                }
+//            }
+//        )
         carregarDados(professoresAdapter)
 
         viewModel.professoresList.observe(this) {
@@ -224,38 +223,46 @@ class ProfessoresActivity :
     ): Unit {
 //        when (view.id) {
 //        }
-        Log.i("EVENTO_API","itemclicado")
+        Log.i("EVENTO_API", "itemclicado")
         Toast.makeText(this, item.txtIdProfessor, Toast.LENGTH_SHORT).show()
     }
 
-    private fun carregarDados(adapter: ProfessoresAdapter){
+    private fun carregarDados(adapter: ProfessoresAdapter) {
         CoroutineScope(Dispatchers.IO).launch() {
             try {
                 val sessionManager = SessionManager(this@ProfessoresActivity)
                 var token = sessionManager.fetchAuthToken()
-                val result = RetrofitHelper.getInstance().create(MateriasApi::class.java).getProfessores(token, "5372477c-c4c6-4b0c-adb9-9e2975193598")
+                val result = RetrofitHelper.getInstance().create(MateriasApi::class.java)
+                    .getProfessores(token, "5372477c-c4c6-4b0c-adb9-9e2975193598")
                 val professores = result.professores
-                Log.i("EVENTO_API","retornoApi: Success: ${professores.size} registros recuperados")
+                Log.i(
+                    "EVENTO_API",
+                    "retornoApi: Success: ${professores.size} registros recuperados"
+                )
 
 
                 professores.forEach {
-                    val professor = ProfessoresRowModel(txtEmailProfessor = it.email, txtIdProfessor = it.id, txtNomeProfessor = it.nome)
+                    val professor = ProfessoresRowModel(
+                        txtEmailProfessor = it.email,
+                        txtIdProfessor = it.id,
+                        txtNomeProfessor = it.nome
+                    )
                     listaProfessores.add(professor)
                     viewModel.professoresList.value?.add((professor))
-                    Log.i("EVENTO_API","adicionado um professor")
+                    Log.i("EVENTO_API", "adicionado um professor")
                 }
                 viewModel.professoresList.value?.addAll(listaProfessores)
-                Log.i("EVENTO_API","log1")
+                Log.i("EVENTO_API", "log1")
 
 
 //                onRestart()
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     adapter.updateData(listaProfessores)
-                    Log.i("EVENTO_API","log2")
+                    Log.i("EVENTO_API", "log2")
 //                    atualizarTela()
                 }
-            }catch (e: Exception){
-                Log.i("EVENTO_API","retornoApi2:  + ${e.message}")
+            } catch (e: Exception) {
+                Log.i("EVENTO_API", "retornoApi2:  + ${e.message}")
             }
         }
 
@@ -263,12 +270,30 @@ class ProfessoresActivity :
 
     override fun onResume() {
 //        carregarDados()
+        atualizarTela()
         super.onResume()
     }
 
-//    private fun atualizarTela(){
+    //    private fun atualizarTela(){
 //    var adapter = ProfessoresAdapter(listaProfessores,this)
 //    }
+    private fun atualizarTela() {
+        var adapter = ProfessoresAdapter(listaProfessores,this)
+        binding.recyclerProfessores.adapter = adapter
+        adapter.setOnItemClickListener(object : ProfessoresAdapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                val item = binding.recyclerProfessores.get(position) as LinearLayout
+                var professor = adapter.getItem(position)
+
+
+
+                Toast.makeText(this@ProfessoresActivity, "${professor.txtIdProfessor}", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+        })
+    }
+
 
     companion object {
         const val TAG: String = "PROFESSORES_ACTIVITY"
@@ -280,7 +305,6 @@ class ProfessoresActivity :
             return destIntent
         }
     }
-
 
 
 }
