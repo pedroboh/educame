@@ -9,6 +9,7 @@ import com.application.app.appcomponents.googleauth.GoogleHelper
 import com.application.app.databinding.ActivityLoginBinding
 import com.application.app.dto.AlunoCadastroModel
 import com.application.app.infrastructure.SessionManager
+import com.application.app.modules.agenda.ui.AgendaActivity
 import com.application.app.modules.cadastroone.ui.CadastroOneActivity
 import com.application.app.modules.login.`data`.viewmodel.LoginVM
 import com.application.app.modules.matrias.ui.MatRiasActivity
@@ -64,11 +65,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                 withContext(Dispatchers.Main){
                     sessionManager = SessionManager(this@LoginActivity)
                     sessionManager.saveAuthToken(result.token)
-                    var token :String = ""
-                    if (sessionManager.fetchAuthToken() != null) {
-                        token += sessionManager.fetchAuthToken()
-                    }
-                    Log.i("EVENTO_API", token)
+//                    var token :String = ""
+//                    if (sessionManager.fetchAuthToken() != null) {
+//                        token += sessionManager.fetchAuthToken()
+//                    }
+//                    Log.i("EVENTO_API", token)
+                    val i = Intent(this@LoginActivity, AgendaActivity::class.java)
+                    startActivity(i)
                 }
             }
             catch (e: Exception){
