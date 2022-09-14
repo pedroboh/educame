@@ -11,10 +11,10 @@ import kotlin.Int
 import kotlin.collections.List
 
 class ProfessoresAdapter(
-
+  var list: List<ProfessoresRowModel>
 ) : RecyclerView.Adapter<ProfessoresAdapter.RowProfessoresVH>() {
   private var clickListener: OnItemClickListener? = null
-  private lateinit var list: List<ProfessoresRowModel>
+
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowProfessoresVH {
     val view=LayoutInflater.from(parent.context).inflate(R.layout.row_professores,parent,false)
     return RowProfessoresVH(view)
@@ -27,9 +27,9 @@ class ProfessoresAdapter(
     holder.binding.professoresRowModel = professoresRowModel
   }
 
-  override fun getItemCount(): Int = 3
+  override fun getItemCount(): Int{
   // TODO uncomment following line after integration with data source
-  // return list.size
+   return list.size}
 
   public fun updateData(newData: List<ProfessoresRowModel>) {
     list = newData
