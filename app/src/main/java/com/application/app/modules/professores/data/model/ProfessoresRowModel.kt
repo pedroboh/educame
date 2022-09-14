@@ -8,6 +8,7 @@ data class ProfessoresRowModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtSrgio: String? = MyApp.getInstance().resources.getString(R.string.lbl_s_rgio)
-
+  var txtNomeProfessor: String?,
+  var txtIdProfessor: String?,
+  var txtEmailProfessor: String?
 )

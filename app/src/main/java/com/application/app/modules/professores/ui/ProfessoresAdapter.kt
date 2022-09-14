@@ -11,19 +11,19 @@ import kotlin.Int
 import kotlin.collections.List
 
 class ProfessoresAdapter(
-  var list: List<ProfessoresRowModel>
+
 ) : RecyclerView.Adapter<ProfessoresAdapter.RowProfessoresVH>() {
   private var clickListener: OnItemClickListener? = null
-
+  private lateinit var list: List<ProfessoresRowModel>
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowProfessoresVH {
     val view=LayoutInflater.from(parent.context).inflate(R.layout.row_professores,parent,false)
     return RowProfessoresVH(view)
   }
 
   override fun onBindViewHolder(holder: RowProfessoresVH, position: Int) {
-    val professoresRowModel = ProfessoresRowModel()
+//    val professoresRowModel = ProfessoresRowModel()
     // TODO uncomment following line after integration with data source
-    // val professoresRowModel = list[position]
+     val professoresRowModel = list[position]
     holder.binding.professoresRowModel = professoresRowModel
   }
 
