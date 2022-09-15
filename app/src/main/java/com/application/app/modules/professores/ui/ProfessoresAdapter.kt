@@ -22,9 +22,9 @@ import kotlin.collections.List
 
 class ProfessoresAdapter(
   var list: List<ProfessoresRowModel>,
-  var context: Context
+//  var context: Context
 ) : RecyclerView.Adapter<ProfessoresAdapter.RowProfessoresVH>() {
-  private var clickListener: OnItemClickListener? = null
+  private lateinit var clickListener: OnItemClickListener
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowProfessoresVH {
 //    carregarDados()
@@ -63,38 +63,38 @@ class ProfessoresAdapter(
     )
   }
 
-  private fun makeToast(message : String){
-    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-  }
-
-  private fun carregarDados(){
-    CoroutineScope(Dispatchers.IO).launch() {
-      try {
-        val sessionManager = SessionManager(context)
-        var token = sessionManager.fetchAuthToken()
-        val result = RetrofitHelper.getInstance().create(MateriasApi::class.java).getProfessores(token, "5372477c-c4c6-4b0c-adb9-9e2975193598")
-        val professores = result.professores
-        Log.i("EVENTO_API","retornoApi: Success: ${professores.size} registros recuperados")
-
-        var listaProfessores = mutableListOf<ProfessoresRowModel>()
-        professores.forEach {
-          val professor = ProfessoresRowModel(txtEmailProfessor = it.email, txtIdProfessor = it.id, txtNomeProfessor = it.nome)
-          listaProfessores.add(professor)
-
-          Log.i("EVENTO_API","adicionado um professor")
-        }
-
-
-                withContext(Dispatchers.Main){
-                    updateData(listaProfessores)
-                }
-      }catch (e: Exception){
-        Log.i("EVENTO_API","retornoApi2:  + ${e.message}")
-
-      }
-    }
-//     return emptyList()
-  }
+//  private fun makeToast(message : String){
+//    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+//  }
+//
+//  private fun carregarDados(){
+//    CoroutineScope(Dispatchers.IO).launch() {
+//      try {
+//        val sessionManager = SessionManager(context)
+//        var token = sessionManager.fetchAuthToken()
+//        val result = RetrofitHelper.getInstance().create(MateriasApi::class.java).getProfessores(token, "5372477c-c4c6-4b0c-adb9-9e2975193598")
+//        val professores = result.professores
+//        Log.i("EVENTO_API","retornoApi: Success: ${professores.size} registros recuperados")
+//
+//        var listaProfessores = mutableListOf<ProfessoresRowModel>()
+//        professores.forEach {
+//          val professor = ProfessoresRowModel(txtEmailProfessor = it.email, txtIdProfessor = it.id, txtNomeProfessor = it.nome)
+//          listaProfessores.add(professor)
+//
+//          Log.i("EVENTO_API","adicionado um professor")
+//        }
+//
+//
+//                withContext(Dispatchers.Main){
+//                    updateData(listaProfessores)
+//                }
+//      }catch (e: Exception){
+//        Log.i("EVENTO_API","retornoApi2:  + ${e.message}")
+//
+//      }
+//    }
+////     return emptyList()
+//  }
 
   inner class RowProfessoresVH(
     view: View
