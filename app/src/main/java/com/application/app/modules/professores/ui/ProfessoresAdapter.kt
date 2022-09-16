@@ -100,5 +100,19 @@ class ProfessoresAdapter(
     view: View
   ) : RecyclerView.ViewHolder(view) {
     val binding: RowProfessoresBinding = RowProfessoresBinding.bind(itemView)
+    init {
+      view.setOnClickListener{
+        Log.i("EVENTO_API", "CLICKADO")
+        Log.i("EVENTO_API", binding.txtIdProfessor.text.toString())
+
+        if (binding.linearInfo.visibility == View.VISIBLE){
+          binding.linearInfo.visibility = View.GONE
+        } else{
+          binding.linearInfo.visibility = View.VISIBLE
+        }
+      }
+
+    }
   }
+
 }

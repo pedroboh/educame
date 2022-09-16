@@ -35,19 +35,19 @@ class ProfessoresActivity :
         val professoresAdapter =
             ProfessoresAdapter(viewModel.professoresList.value ?: mutableListOf())
         binding.recyclerProfessores.adapter = professoresAdapter
-//        professoresAdapter.setOnItemClickListener(
-//            object : ProfessoresAdapter.OnItemClickListener {
-//                override fun onItemClick(view: View, position: Int, item: ProfessoresRowModel) {
+        professoresAdapter.setOnItemClickListener(
+            object : ProfessoresAdapter.OnItemClickListener {
+                override fun onItemClick(view: View, position: Int, item: ProfessoresRowModel) {
 //                    Log.i("EVENTO_API", "itemclicado")
 //                    Toast.makeText(
 //                        this@ProfessoresActivity,
 //                        item.txtIdProfessor,
 //                        Toast.LENGTH_SHORT
 //                    ).show()
-////                    onClickRecyclerProfessores(view, position, item)
-//                }
-//            }
-//        )
+                    onClickRecyclerProfessores(view, position, item)
+                }
+            }
+        )
         carregarDados(professoresAdapter)
 
         viewModel.professoresList.observe(this) {
