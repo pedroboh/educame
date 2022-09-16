@@ -177,9 +177,11 @@ class ProfessoresAdapter(
                 pickedDateTime.set(year, month, day, hour, minute)
 //        doSomethingWith(pickedDateTime)
                 dataAgenda = pickedDateTime
+                Log.i("EVENTO_API", pickedDateTime.toString())
+                Log.i("EVENTO_API", pickedDateTime.time.toString())
                 registrarLive(dataAgenda.time,professor)
 
-                Log.i("EVENTO_API", pickedDateTime.toString())
+
             }, startHour, startMinute, false).show()
         }, startYear, startMonth, startDay).show()
         return dataAgenda

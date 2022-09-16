@@ -89,6 +89,11 @@
             android:layout_marginStart="@dimen/_15pxh"
             android:layout_marginTop="@dimen/_19pxv" android:layout_width="@dimen/_269pxh"/>
 
+        <TextView
+            android:id="@+id/txtNomeAula"
+
+            />
+
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnAgendarAula"
