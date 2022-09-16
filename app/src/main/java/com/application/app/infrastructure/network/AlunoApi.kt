@@ -1,13 +1,7 @@
 package com.lastcode.educame.infrastructure.network
 
-import com.application.app.dto.AlunoAuthModel
-import com.application.app.dto.AlunoCadastroModel
-import com.application.app.dto.AlunoLoginModel
-import com.application.app.dto.AlunoModel
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import com.application.app.dto.*
+import retrofit2.http.*
 
 interface AlunoApi {
 
@@ -19,4 +13,7 @@ interface AlunoApi {
 
     @POST("api/Alunos/authorize")
     suspend fun loginAluno(@Body alunoModel: AlunoCadastroModel) : AlunoAuthModel
+
+    @GET("api/Alunos/{id}/agenda")
+    suspend fun getAgenda(@Header("Authorization") token: String?, @Path("id") alunoId : String) : AgendaAlunoModel
 }
