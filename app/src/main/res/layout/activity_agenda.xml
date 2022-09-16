@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="agendaVM" type="com.application.app.modules.agenda.data.viewmodel.AgendaVM"/>
     </data>
@@ -55,233 +57,46 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:orientation="vertical" style="@style/groupStylegray_50cornerRadius">
-                <LinearLayout android:gravity="start"
-                    android:id="@+id/linearColumnsrgio"
+                <LinearLayout android:id="@+id/linearRowagenda"
+                    android:layout_gravity="top|start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal" style="@style/groupStylewhite_1">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtAgenda"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_23pxv"
+                        android:layout_marginStart="@dimen/_28pxh"
+                        android:layout_marginTop="@dimen/_23pxv"
+                        android:layout_weight="0.68"
+                        android:layout_width="0dp" android:singleLine="true"
+                        android:text="@{agendaVM.agendaModel.txtAgenda}"
+                        style="@style/txtLexendPetaregular20" tools:text="@string/lbl_agenda"/>
+                    <ImageView android:id="@+id/imageVectorOne"
+                        android:layout_height="@dimen/_50pxh"
+                        android:layout_marginBottom="@dimen/_7pxv"
+                        android:layout_marginEnd="@dimen/_39pxh"
+                        android:layout_marginStart="@dimen/_140pxh"
+                        android:layout_marginTop="@dimen/_9pxv"
+                        android:layout_width="@dimen/_49pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_user"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerAgenda"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_86pxv"
-                    android:layout_width="wrap_content"
-                    android:orientation="vertical" style="@style/groupStylewhite_A700cornerRadiusAgenda">
+                    android:layout_marginTop="@dimen/_19pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_4pxh}" tools:itemCount="3" tools:listitem="@layout/row_agenda"/>
 
-                    <LinearLayout
-                        android:id="@+id/linearRowsrgio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_15pxh"
-                        android:layout_marginTop="@dimen/_15pxv"
-                        android:layout_marginEnd="@dimen/_15pxh"
-                        android:gravity="start"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/txtSrgio"
-                            style="@style/txtLexendPetaregular20"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_4pxv"
-                            android:layout_marginBottom="@dimen/_19pxv"
-                            android:layout_weight="0.65"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="@{agendaVM.agendaModel.txtSrgio}"
-                            tools:text="@string/lbl_s_rgio" />
-
-                        <ImageView
-                            android:id="@+id/imageVector"
-                            android:layout_width="@dimen/_49pxh"
-                            android:layout_height="@dimen/_44pxh"
-                            android:layout_marginStart="@dimen/_116pxh"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_user"
-                            tools:ignore="ContentDescription"
-                            tools:src="@drawable/img_user" />
-                    </LinearLayout>
-
-                    <LinearLayout android:id="@+id/linearRowfive"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_11pxv"
-                        android:layout_marginEnd="@dimen/_15pxh"
-                        android:layout_marginStart="@dimen/_15pxh"
-                        android:layout_marginTop="@dimen/_1pxv"
-                        android:layout_width="wrap_content" android:orientation="horizontal">
-                        <LinearLayout android:id="@+id/linearHorrios"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.72"
-                            android:layout_width="0dp"
-                            android:orientation="horizontal" style="@style/groupStylecornerRadius">
-                            <LinearLayout
-                                android:gravity="center_horizontal"
-                                android:id="@+id/linearColumnfive"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.17"
-                                android:layout_width="0dp"
-                                android:orientation="vertical" style="@style/groupStylewhite_1">
-                                <TextView android:ellipsize="end"
-                                    android:gravity="end"
-                                    android:id="@+id/txtFive"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginBottom="@dimen/_3pxv"
-                                    android:layout_marginEnd="@dimen/_1pxh"
-                                    android:layout_marginStart="@dimen/_2pxh"
-                                    android:layout_marginTop="@dimen/_6pxv"
-                                    android:layout_width="match_parent"
-                                    android:singleLine="true"
-                                    android:text="@{agendaVM.agendaModel.txtFive}"
-                                    style="@style/txtLexendPetaregular12" tools:text="@string/lbl_05"/>
-                            </LinearLayout>
-                            <TextView android:ellipsize="end"
-                                android:id="@+id/txtOne"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="@dimen/_4pxv"
-                                android:layout_marginTop="@dimen/_5pxv"
-                                android:layout_weight="0.07"
-                                android:layout_width="0dp"
-                                android:singleLine="true"
-                                android:text="/"
-                                style="@style/txtLexendPetaregular12" tools:text="/"/>
-                            <LinearLayout
-                                android:gravity="center_horizontal"
-                                android:id="@+id/linearColumnseven"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.17"
-                                android:layout_width="0dp"
-                                android:orientation="vertical" style="@style/groupStylewhite_1">
-                                <TextView android:ellipsize="end"
-                                    android:gravity="end"
-                                    android:id="@+id/txtSeven"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginBottom="@dimen/_3pxv"
-                                    android:layout_marginEnd="@dimen/_1pxh"
-                                    android:layout_marginStart="@dimen/_2pxh"
-                                    android:layout_marginTop="@dimen/_6pxv"
-                                    android:layout_width="match_parent"
-                                    android:singleLine="true"
-                                    android:text="@{agendaVM.agendaModel.txtSeven}"
-                                    style="@style/txtLexendPetaregular12" tools:text="@string/lbl_07"/>
-                            </LinearLayout>
-                            <TextView android:ellipsize="end"
-                                android:id="@+id/txtTwo"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="@dimen/_5pxv"
-                                android:layout_marginTop="@dimen/_4pxv"
-                                android:layout_weight="0.07"
-                                android:layout_width="0dp"
-                                android:singleLine="true"
-                                android:text="/"
-                                style="@style/txtLexendPetaregular12" tools:text="/"/>
-                            <LinearLayout
-                                android:gravity="center_horizontal"
-                                android:id="@+id/linearColumntwentytwo"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.17"
-                                android:layout_width="0dp"
-                                android:orientation="vertical" style="@style/groupStylewhite_1">
-                                <TextView android:ellipsize="end"
-                                    android:gravity="end"
-                                    android:id="@+id/txtTwentyTwo"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginBottom="@dimen/_3pxv"
-                                    android:layout_marginEnd="@dimen/_1pxh"
-                                    android:layout_marginStart="@dimen/_2pxh"
-                                    android:layout_marginTop="@dimen/_6pxv"
-                                    android:layout_width="match_parent"
-                                    android:singleLine="true"
-                                    android:text="@{agendaVM.agendaModel.txtTwentyTwo}"
-                                    style="@style/txtLexendPetaregular12" tools:text="@string/lbl_22"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:gravity="center_horizontal"
-                                android:id="@+id/linearColumneighteen"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_30pxh"
-                                android:layout_weight="0.17"
-                                android:layout_width="0dp"
-                                android:orientation="vertical" style="@style/groupStylewhite_1">
-                                <TextView android:ellipsize="end"
-                                    android:gravity="center_horizontal"
-                                    android:id="@+id/txtEighteen"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginBottom="@dimen/_3pxv"
-                                    android:layout_marginEnd="@dimen/_2pxh"
-                                    android:layout_marginStart="@dimen/_2pxh"
-                                    android:layout_marginTop="@dimen/_6pxv"
-                                    android:layout_width="match_parent"
-                                    android:singleLine="true"
-                                    android:text="@{agendaVM.agendaModel.txtEighteen}"
-                                    style="@style/txtLexendPetaregular12" tools:text="@string/lbl_18"/>
-                            </LinearLayout>
-                            <TextView android:ellipsize="end"
-                                android:id="@+id/txtThree"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="@dimen/_3pxv"
-                                android:layout_marginTop="@dimen/_6pxv"
-                                android:layout_weight="0.05"
-                                android:layout_width="0dp"
-                                android:singleLine="true"
-                                android:text=":"
-                                style="@style/txtLexendPetaregular12" tools:text=":"/>
-                            <LinearLayout
-                                android:gravity="center_horizontal"
-                                android:id="@+id/linearColumnzero"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.17"
-                                android:layout_width="0dp"
-                                android:orientation="vertical" style="@style/groupStylewhite_1">
-                                <TextView android:ellipsize="end"
-                                    android:gravity="end"
-                                    android:id="@+id/txtZero"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginBottom="@dimen/_3pxv"
-                                    android:layout_marginStart="@dimen/_2pxh"
-                                    android:layout_marginTop="@dimen/_6pxv"
-                                    android:layout_width="match_parent"
-                                    android:singleLine="true"
-                                    android:text="@{agendaVM.agendaModel.txtZero}"
-                                    style="@style/txtLexendPetaregular12" tools:text="@string/lbl_00"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                        <androidx.appcompat.widget.AppCompatRatingBar
-                            android:id="@+id/ratingBarRatingbar"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_6pxv"
-                            android:layout_marginStart="@dimen/_44pxh"
-                            android:layout_marginTop="@dimen/_4pxv"
-                            android:layout_weight="0.28"
-                            android:layout_width="0dp"
-                            android:numStars="5"
-                            android:progressTint="@color/bluegray_100"
-                            android:rating="5" style="@style/Widget.AppCompat.RatingBar.Small"/>
-                    </LinearLayout>
-                </LinearLayout>
 
             </LinearLayout>
-            <LinearLayout android:id="@+id/linearRowagenda"
-                android:layout_gravity="top|start"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10pxv"
-                android:layout_width="match_parent"
-                android:orientation="horizontal" style="@style/groupStylewhite_1">
-                <TextView android:ellipsize="end"
-                    android:id="@+id/txtAgenda"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_23pxv"
-                    android:layout_marginStart="@dimen/_28pxh"
-                    android:layout_marginTop="@dimen/_23pxv"
-                    android:layout_weight="0.68"
-                    android:layout_width="0dp" android:singleLine="true"
-                    android:text="@{agendaVM.agendaModel.txtAgenda}"
-                    style="@style/txtLexendPetaregular20" tools:text="@string/lbl_agenda"/>
-                <ImageView android:id="@+id/imageVectorOne"
-                    android:layout_height="@dimen/_50pxh"
-                    android:layout_marginBottom="@dimen/_7pxv"
-                    android:layout_marginEnd="@dimen/_39pxh"
-                    android:layout_marginStart="@dimen/_140pxh"
-                    android:layout_marginTop="@dimen/_9pxv"
-                    android:layout_width="@dimen/_49pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_user"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
-            </LinearLayout>
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
@@ -301,6 +116,9 @@
                 android:text="@string/lbl_marcar_aula"
                 android:textAllCaps="false"
                 style="@style/btnSolidRounded" tools:text="@string/lbl_marcar_aula"/>
+
+
+
         </FrameLayout>
     </LinearLayout>
 </layout>
