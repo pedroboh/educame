@@ -61,7 +61,7 @@
     <LinearLayout android:id="@+id/linearInfo"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         android:orientation="vertical" style="@style/groupStylewhite_1">
 
         <View android:background="@color/gray_300"
@@ -91,7 +91,22 @@
 
         <TextView
             android:id="@+id/txtNomeAula"
+            android:text="Nome da Aula"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/_15pxh"
+            android:layout_marginTop="@dimen/_19pxv"
+            style="@style/txtLexendPetaregular13"
+            />
 
+        <EditText
+            android:id="@+id/etNomeAula"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="@dimen/_15pxh"
+            android:layout_marginStart="@dimen/_15pxh"
+            style="@style/txtLexendPetaregular13"
+            tools:text = "Teste de nome de aula"
             />
 
         <androidx.appcompat.widget.AppCompatButton

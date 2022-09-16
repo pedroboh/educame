@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 import com.application.app.databinding.RowProfessoresBinding
@@ -108,7 +109,7 @@ class ProfessoresAdapter(
         val binding: RowProfessoresBinding = RowProfessoresBinding.bind(itemView)
 
         init {
-            view.setOnClickListener {
+            binding.txtNomeProfessor.setOnClickListener {
                 Log.i("EVENTO_API", "CLICKADO")
                 Log.i("EVENTO_API", binding.txtIdProfessor.text.toString())
 
@@ -124,7 +125,9 @@ class ProfessoresAdapter(
                 val emailProfessor = binding.txtEmailProfessor.text.toString()
                 val idProfessor = binding.txtIdProfessor.text.toString()
                 val professor = ProfessorMarcarLiveModel(id = idProfessor, nome = nomeProfessor, email = emailProfessor)
-                agendarLive(professor)
+                val nomeLive = binding.etNomeAula.text.toString()
+                agendarLive(professor,nomeLive)
+
 
 
 
@@ -132,7 +135,7 @@ class ProfessoresAdapter(
         }
     }
 
-    private fun registrarLive(data:Date, professor: ProfessorMarcarLiveModel){
+    private fun registrarLive(data:Date, professor: ProfessorMarcarLiveModel, nomeLive: String){
         val coroutineScope = CoroutineScope(Dispatchers.IO)
 
         coroutineScope.launch {
@@ -143,7 +146,7 @@ class ProfessoresAdapter(
 
                     val live = LiveMarcarModel(
                         data = data,
-                        nome = "placeholder+ ${professor}",
+                        nome = nomeLive,
                         link = "placeholder",
                         professor = professorAgenda
                     )
@@ -153,6 +156,7 @@ class ProfessoresAdapter(
                             sessionManager.fetchID(),
                             live
                         )
+                    Toast.makeText(context, "Aula agendada", Toast.LENGTH_SHORT).show()
                     Log.i("EVENTO_API", result.id)
                 }
             } catch (e: Exception) {
@@ -163,7 +167,7 @@ class ProfessoresAdapter(
         }
     }
 
-    private fun agendarLive(professor: ProfessorMarcarLiveModel): Calendar {
+    private fun agendarLive(professor: ProfessorMarcarLiveModel, nomeLive:String): Calendar {
         val currentDateTime = Calendar.getInstance()
         val startYear = currentDateTime.get(Calendar.YEAR)
         val startMonth = currentDateTime.get(Calendar.MONTH)
@@ -179,7 +183,7 @@ class ProfessoresAdapter(
                 dataAgenda = pickedDateTime
                 Log.i("EVENTO_API", pickedDateTime.toString())
                 Log.i("EVENTO_API", pickedDateTime.time.toString())
-                registrarLive(dataAgenda.time,professor)
+                registrarLive(dataAgenda.time,professor,nomeLive)
 
 
             }, startHour, startMinute, false).show()
