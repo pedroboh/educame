@@ -163,7 +163,7 @@ class ProfessoresAdapter(
         }
     }
 
-    private fun agendarLive(nomeProfessor:String): Calendar {
+    private fun agendarLive(professor: ProfessorMarcarLiveModel): Calendar {
         val currentDateTime = Calendar.getInstance()
         val startYear = currentDateTime.get(Calendar.YEAR)
         val startMonth = currentDateTime.get(Calendar.MONTH)
@@ -177,7 +177,7 @@ class ProfessoresAdapter(
                 pickedDateTime.set(year, month, day, hour, minute)
 //        doSomethingWith(pickedDateTime)
                 dataAgenda = pickedDateTime
-                registrarLive(dataAgenda.time,nomeProfessor)
+                registrarLive(dataAgenda.time,professor)
 
                 Log.i("EVENTO_API", pickedDateTime.toString())
             }, startHour, startMinute, false).show()
