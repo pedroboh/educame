@@ -9,6 +9,7 @@ import com.application.app.appcomponents.googleauth.GoogleHelper
 import com.application.app.databinding.ActivityLoginBinding
 import com.application.app.dto.AlunoCadastroModel
 import com.application.app.infrastructure.SessionManager
+import com.application.app.modules.agenda.ui.AgendaActivity
 import com.application.app.modules.cadastroone.ui.CadastroOneActivity
 import com.application.app.modules.login.`data`.viewmodel.LoginVM
 import com.application.app.modules.professores.ui.ProfessoresActivity
@@ -69,7 +70,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
 //                        token += sessionManager.fetchAuthToken()
 //                    }
 //                    Log.i("EVENTO_API", token)
-                    val i = Intent(this@LoginActivity, ProfessoresActivity::class.java)
+                    val i = Intent(this@LoginActivity, AgendaActivity::class.java)
                     startActivity(i)
                 }
             }

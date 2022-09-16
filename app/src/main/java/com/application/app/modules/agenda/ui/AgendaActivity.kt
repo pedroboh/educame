@@ -12,6 +12,7 @@ import com.application.app.infrastructure.SessionManager
 import com.application.app.modules.agenda.`data`.viewmodel.AgendaVM
 import com.application.app.modules.matrias.ui.MatRiasActivity
 import com.application.app.modules.professores.data.model.ProfessoresRowModel
+import com.application.app.modules.professores.ui.ProfessoresActivity
 import com.lastcode.educame.infrastructure.network.AlunoApi
 import com.lastcode.educame.infrastructure.network.RetrofitHelper
 import kotlinx.coroutines.CoroutineScope
@@ -48,7 +49,7 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
 
   override fun setUpClicks(): Unit {
     binding.btnMarcarAula.setOnClickListener {
-      val i = Intent(this, MatRiasActivity::class.java)
+      val i = Intent(this, ProfessoresActivity::class.java)
       startActivity(i)
     }
   }
