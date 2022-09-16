@@ -51,7 +51,7 @@
         </LinearLayout>
         <LinearLayout android:gravity="center_horizontal"
             android:id="@+id/linearColumnmatemtica"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:orientation="vertical" style="@style/groupStylegray_50cornerRadius">
             <LinearLayout android:id="@+id/linearRowmatemtica"
@@ -88,6 +88,7 @@
                 android:layout_marginStart="@dimen/_21pxh"
                 android:layout_marginTop="@dimen/_11pxv"
                 android:layout_width="match_parent"
+                android:visibility ="gone"
                 android:orientation="horizontal" style="@style/groupStylewhite_A700cornerRadius">
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtPORTUGUS"
@@ -120,6 +121,7 @@
                 android:layout_marginTop="@dimen/_11pxv"
                 android:layout_marginEnd="@dimen/_17pxh"
                 android:layout_marginBottom="@dimen/_580pxv"
+                android:visibility = "gone"
                 android:orientation="horizontal">
 
                 <TextView

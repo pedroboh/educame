@@ -33,7 +33,7 @@ class ProfessoresActivity :
     override fun onInitialized(): Unit {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         val professoresAdapter =
-            ProfessoresAdapter(viewModel.professoresList.value ?: mutableListOf())
+            ProfessoresAdapter(viewModel.professoresList.value ?: mutableListOf(),this@ProfessoresActivity)
         binding.recyclerProfessores.adapter = professoresAdapter
         professoresAdapter.setOnItemClickListener(
             object : ProfessoresAdapter.OnItemClickListener {
@@ -121,7 +121,7 @@ class ProfessoresActivity :
     }
 
     private fun atualizarTela() {
-        var adapter = ProfessoresAdapter(listaProfessores)
+        var adapter = ProfessoresAdapter(listaProfessores,this@ProfessoresActivity)
         binding.recyclerProfessores.adapter = adapter
         adapter.setOnItemClickListener(object : ProfessoresAdapter.OnItemClickListener{
             override fun onItemClick(view: View, position: Int, item: ProfessoresRowModel) {

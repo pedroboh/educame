@@ -16,4 +16,7 @@ interface AlunoApi {
 
     @GET("api/Alunos/{id}/agenda")
     suspend fun getAgenda(@Header("Authorization") token: String?, @Path("id") alunoId : String) : AgendaAlunoModel
+
+    @PUT("api/Alunos/{id}/agendarLive")
+    suspend fun agendarLive(@Header("Authorization") token: String?, @Path("id") alunoId: String?, @Body live : LiveMarcarModel) : LiveMarcarRetornoModel
 }

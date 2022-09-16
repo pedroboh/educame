@@ -52,7 +52,7 @@
         </LinearLayout>
         <LinearLayout android:gravity="start"
             android:id="@+id/linearColumnmatemtica"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:orientation="vertical" style="@style/groupStylegray_50cornerRadius">
             <LinearLayout android:id="@+id/linearRowmatemtica"

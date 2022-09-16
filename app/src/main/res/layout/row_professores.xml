@@ -61,7 +61,7 @@
     <LinearLayout android:id="@+id/linearInfo"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical" style="@style/groupStylewhite_1">
 
         <View android:background="@color/gray_300"
@@ -88,6 +88,7 @@
             android:layout_marginEnd="@dimen/_15pxh"
             android:layout_marginStart="@dimen/_15pxh"
             android:layout_marginTop="@dimen/_19pxv" android:layout_width="@dimen/_269pxh"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnAgendarAula"

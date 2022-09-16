@@ -63,6 +63,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                 withContext(Dispatchers.Main){
                     sessionManager = SessionManager(this@LoginActivity)
                     sessionManager.saveAuthToken(result.token)
+                    sessionManager.saveID(result.registerViewModel.id)
 //                    var token :String = ""
 //                    if (sessionManager.fetchAuthToken() != null) {
 //                        token += sessionManager.fetchAuthToken()

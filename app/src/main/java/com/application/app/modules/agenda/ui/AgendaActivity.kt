@@ -1,10 +1,13 @@
 package com.application.app.modules.agenda.ui
 
+import android.content.Intent
 import androidx.activity.viewModels
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityAgendaBinding
 import com.application.app.modules.agenda.`data`.viewmodel.AgendaVM
+import com.application.app.modules.cadastroone.ui.CadastroOneActivity
+import com.application.app.modules.matrias.ui.MatRiasActivity
 import com.application.app.modules.professores.ui.ProfessoresActivity
 import kotlin.String
 import kotlin.Unit
@@ -18,9 +21,9 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
   }
 
   override fun setUpClicks(): Unit {
-    binding.etBotoVoltar.setOnClickListener {
-      val destIntent = ProfessoresActivity.getIntent(this, null)
-      startActivity(destIntent)
+    binding.btnMarcarAula.setOnClickListener {
+      val i = Intent(this, MatRiasActivity::class.java)
+      startActivity(i)
     }
   }
 
