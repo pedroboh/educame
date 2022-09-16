@@ -23,7 +23,7 @@ data class AgendaModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtFour: String? = MyApp.getInstance().resources.getString(R.string.lbl2)
+  var txtOne: String? = MyApp.getInstance().resources.getString(R.string.lbl)
   ,
   /**
    * TODO Replace with dynamic value
@@ -33,7 +33,7 @@ data class AgendaModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtSix: String? = MyApp.getInstance().resources.getString(R.string.lbl2)
+  var txtTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl)
   ,
   /**
    * TODO Replace with dynamic value
@@ -48,7 +48,7 @@ data class AgendaModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtEight: String? = MyApp.getInstance().resources.getString(R.string.lbl3)
+  var txtThree: String? = MyApp.getInstance().resources.getString(R.string.lbl2)
   ,
   /**
    * TODO Replace with dynamic value
@@ -58,20 +58,96 @@ data class AgendaModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtSrgioOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_s_rgio)
-  ,
-  /**
-   * TODO Replace with dynamic value
-   */
-  var txtGroupTen: String? = MyApp.getInstance().resources.getString(R.string.lbl_aula_ao_vivo)
-  ,
-  /**
-   * TODO Replace with dynamic value
-   */
   var txtAgenda: String? = MyApp.getInstance().resources.getString(R.string.lbl_agenda)
   ,
   /**
    * TODO Replace with dynamic value
    */
-  var etBotoVoltarValue: String? = null
+  var txtSrgioOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_s_rgio)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtFiveOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_05)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtFour: String? = MyApp.getInstance().resources.getString(R.string.lbl)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtSevenOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_07)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtSix: String? = MyApp.getInstance().resources.getString(R.string.lbl)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtTwentyTwoOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_22)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtEighteenOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_18)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtEight: String? = MyApp.getInstance().resources.getString(R.string.lbl2)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtZeroOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_00)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtSrgioTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl_s_rgio)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtFiveTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl_05)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtNine: String? = MyApp.getInstance().resources.getString(R.string.lbl)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtSevenTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl_07)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtTen: String? = MyApp.getInstance().resources.getString(R.string.lbl)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtTwentyTwoTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl_22)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtEighteenTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl_18)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtEleven: String? = MyApp.getInstance().resources.getString(R.string.lbl2)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtZeroTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl_00)
+
 )
