@@ -98,7 +98,7 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
             url = it.url
           )
           listaAgenda.add(aula)
-          viewModel.agendaList.value?.add((aula))
+//          viewModel.agendaList.value?.add((aula))
           Log.i("EVENTO_API", "adicionado um professor")
         }
         viewModel.agendaList.value?.addAll(listaAgenda)

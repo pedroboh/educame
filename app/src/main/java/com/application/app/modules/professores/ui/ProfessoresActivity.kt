@@ -93,7 +93,7 @@ class ProfessoresActivity :
                         txtNomeProfessor = it.nome
                     )
                     listaProfessores.add(professor)
-                    viewModel.professoresList.value?.add((professor))
+//                    viewModel.professoresList.value?.add((professor))
                     Log.i("EVENTO_API", "adicionado um professor")
                 }
                 viewModel.professoresList.value?.addAll(listaProfessores)
