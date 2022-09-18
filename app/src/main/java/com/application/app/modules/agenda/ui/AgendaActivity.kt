@@ -51,6 +51,11 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
     binding.agendaVM = viewModel
   }
 
+  override fun onResume() {
+    onInitialized()
+    super.onResume()
+  }
+
   override fun setUpClicks(): Unit {
     binding.btnMarcarAula.setOnClickListener {
       val i = Intent(this, ProfessoresActivity::class.java)
