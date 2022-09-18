@@ -39,7 +39,7 @@
                     tools:text="Nome teste" />
 
                 <ImageView
-                    android:id="@+id/imageVector"
+                    android:id="@+id/imageVectorAgenda"
                     android:layout_width="@dimen/_49pxh"
                     android:layout_height="@dimen/_44pxh"
                     android:layout_marginStart="@dimen/_116pxh"
@@ -49,7 +49,7 @@
                     tools:src="@drawable/img_user" />
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/linearRowfive"
+            <LinearLayout android:id="@+id/linearRowfiveAgenda"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_11pxv"
                 android:layout_marginEnd="@dimen/_15pxh"
@@ -63,7 +63,7 @@
                     android:orientation="horizontal" style="@style/groupStylecornerRadius">
                     <LinearLayout
                         android:gravity="center_horizontal"
-                        android:id="@+id/linearColumnfive"
+                        android:id="@+id/linearColumnfiveAgenda"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.17"
                         android:layout_width="0dp"
@@ -82,7 +82,7 @@
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_05"/>
                     </LinearLayout>
                     <TextView android:ellipsize="end"
-                        android:id="@+id/txtOne"
+                        android:id="@+id/txtOneAgenda"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_4pxv"
                         android:layout_marginTop="@dimen/_5pxv"
@@ -93,7 +93,7 @@
                         style="@style/txtLexendPetaregular12" tools:text="/"/>
                     <LinearLayout
                         android:gravity="center_horizontal"
-                        android:id="@+id/linearColumnseven"
+                        android:id="@+id/linearColumnsevenAgenda"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.17"
                         android:layout_width="0dp"
@@ -112,7 +112,7 @@
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_07"/>
                     </LinearLayout>
                     <TextView android:ellipsize="end"
-                        android:id="@+id/txtTwo"
+                        android:id="@+id/txtTwoAgenda"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_5pxv"
                         android:layout_marginTop="@dimen/_4pxv"
@@ -123,7 +123,7 @@
                         style="@style/txtLexendPetaregular12" tools:text="/"/>
                     <LinearLayout
                         android:gravity="center_horizontal"
-                        android:id="@+id/linearColumntwentytwo"
+                        android:id="@+id/linearColumntwentytwoAgenda"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.17"
                         android:layout_width="0dp"
@@ -143,7 +143,7 @@
                     </LinearLayout>
                     <LinearLayout
                         android:gravity="center_horizontal"
-                        android:id="@+id/linearColumneighteen"
+                        android:id="@+id/linearColumneighteenAgenda"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_30pxh"
                         android:layout_weight="0.17"
@@ -163,7 +163,7 @@
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_18"/>
                     </LinearLayout>
                     <TextView android:ellipsize="end"
-                        android:id="@+id/txtThree"
+                        android:id="@+id/txtThreeAgenda"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_3pxv"
                         android:layout_marginTop="@dimen/_6pxv"
@@ -174,14 +174,14 @@
                         style="@style/txtLexendPetaregular12" tools:text=":"/>
                     <LinearLayout
                         android:gravity="center_horizontal"
-                        android:id="@+id/linearColumnzero"
+                        android:id="@+id/linearColumnzeroAgenda"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.17"
                         android:layout_width="0dp"
                         android:orientation="vertical" style="@style/groupStylewhite_1">
                         <TextView android:ellipsize="end"
                             android:gravity="end"
-                            android:id="@+id/txtZero"
+                            android:id="@+id/txtZeroAgenda"
                             android:layout_height="match_parent"
                             android:layout_marginBottom="@dimen/_3pxv"
                             android:layout_marginStart="@dimen/_2pxh"
@@ -193,7 +193,7 @@
                     </LinearLayout>
                 </LinearLayout>
                 <androidx.appcompat.widget.AppCompatRatingBar
-                    android:id="@+id/ratingBarRatingbar"
+                    android:id="@+id/ratingBarRatingbarAgenda"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_6pxv"
                     android:layout_marginStart="@dimen/_44pxh"

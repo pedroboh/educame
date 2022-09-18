@@ -40,6 +40,8 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
         }
       }
     )
+
+//AQUI QUE DA O PROBLEMA
     carregarDados(agendaAdapter)
 
     viewModel.agendaList.observe(this){
@@ -101,6 +103,11 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
 //          viewModel.agendaList.value?.add((aula))
           Log.i("EVENTO_API", "adicionado um professor")
         }
+
+        //ADICIONA VALORES PRA LISTA
+        //
+
+
         viewModel.agendaList.value?.addAll(listaAgenda)
         Log.i("EVENTO_API", "log1")
 
@@ -108,6 +115,8 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
 
         withContext(Dispatchers.Main) {
 
+
+          //PROVAVELMENTE É AQUI O PROBLEMA
           adapter.updateData(listaAgenda)
           Log.i("EVENTO_API", "log2")
 //                    atualizarTela()
