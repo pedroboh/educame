@@ -17,6 +17,7 @@ import com.application.app.infrastructure.SessionManager
 import com.application.app.modules.professores.`data`.model.ProfessoresRowModel
 import com.lastcode.educame.infrastructure.network.AlunoApi
 import com.lastcode.educame.infrastructure.network.RetrofitHelper
+import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -149,6 +150,8 @@ class ProfessoresAdapter(
                 pickedDateTime.set(year, month, day, hour, minute)
 //        doSomethingWith(pickedDateTime)
                 dataAgenda = pickedDateTime
+                Log.i("EVENTO_API", "É ESSE FORMATO AQUI")
+                Log.i("EVENTO_API", Rfc3339DateJsonAdapter().toJson(dataAgenda.time))
                 Log.i("EVENTO_API", pickedDateTime.toString())
                 Log.i("EVENTO_API", pickedDateTime.time.toString())
                 registrarLive(dataAgenda.time,professor,nomeLive)

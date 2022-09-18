@@ -84,13 +84,14 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
 
         agenda.forEach {
           var dataString = it.data
-          dataString = "{ "+dataString+"Z }"
+          dataString += "Z"
+//          "2022-09-27T01:59:12.471Z"
           val jsonReader =Rfc3339DateJsonAdapter()
 
           val aula = AgendaAlunoModel(
 
 //            data = Rfc3339DateJsonAdapter().nullSafe().fromJson("{${dataString}Z}"),
-            data = jsonReader.fromJson(dataString),
+            data = jsonReader.fromJsonValue(dataString),
             emailProfessor = it.emailProfessor,
             nomeProfessor = it.nomeProfessor,
             nomeLive = it.nomeLive,
