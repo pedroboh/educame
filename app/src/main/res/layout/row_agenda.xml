@@ -28,7 +28,7 @@
                 <TextView
                     android:id="@+id/txtNomeAula"
                     style="@style/txtLexendPetaregular20"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4pxv"
                     android:layout_marginBottom="@dimen/_19pxv"
@@ -66,131 +66,48 @@
                         android:id="@+id/linearColumnfiveAgenda"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.17"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:orientation="vertical" style="@style/groupStylewhite_1">
                         <TextView android:ellipsize="end"
-                            android:gravity="end"
-                            android:id="@+id/txtDiaAula"
+                            android:gravity="start"
+                            android:id="@+id/txtDataAula"
                             android:layout_height="match_parent"
                             android:layout_marginBottom="@dimen/_3pxv"
                             android:layout_marginEnd="@dimen/_1pxh"
-                            android:layout_marginStart="@dimen/_2pxh"
+
                             android:layout_marginTop="@dimen/_6pxv"
                             android:layout_width="match_parent"
                             android:singleLine="true"
-                            android:text='@{agendaAlunoModel.data.day + ""}'
-                            style="@style/txtLexendPetaregular12" tools:text="@string/lbl_05"/>
+                            android:text='@{agendaAlunoModel.data.day +"/"+ agendaAlunoModel.data.month +"/"+ agendaAlunoModel.data.year}'
+                            style="@style/txtLexendPetaregular12" tools:text="05/05/2022"/>
                     </LinearLayout>
-                    <TextView android:ellipsize="end"
-                        android:id="@+id/txtOneAgenda"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_4pxv"
-                        android:layout_marginTop="@dimen/_5pxv"
-                        android:layout_weight="0.07"
-                        android:layout_width="0dp"
-                        android:singleLine="true"
-                        android:text="/"
-                        style="@style/txtLexendPetaregular12" tools:text="/"/>
-                    <LinearLayout
-                        android:gravity="center_horizontal"
-                        android:id="@+id/linearColumnsevenAgenda"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.17"
-                        android:layout_width="0dp"
-                        android:orientation="vertical" style="@style/groupStylewhite_1">
-                        <TextView android:ellipsize="end"
-                            android:gravity="end"
-                            android:id="@+id/txtMesAula"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="@dimen/_3pxv"
-                            android:layout_marginEnd="@dimen/_1pxh"
-                            android:layout_marginStart="@dimen/_2pxh"
-                            android:layout_marginTop="@dimen/_6pxv"
-                            android:layout_width="match_parent"
-                            android:singleLine="true"
-                            android:text='@{agendaAlunoModel.data.month + ""}'
-                            style="@style/txtLexendPetaregular12" tools:text="@string/lbl_07"/>
-                    </LinearLayout>
-                    <TextView android:ellipsize="end"
-                        android:id="@+id/txtTwoAgenda"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_marginTop="@dimen/_4pxv"
-                        android:layout_weight="0.07"
-                        android:layout_width="0dp"
-                        android:singleLine="true"
-                        android:text="/"
-                        style="@style/txtLexendPetaregular12" tools:text="/"/>
-                    <LinearLayout
-                        android:gravity="center_horizontal"
-                        android:id="@+id/linearColumntwentytwoAgenda"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.17"
-                        android:layout_width="0dp"
-                        android:orientation="vertical" style="@style/groupStylewhite_1">
-                        <TextView android:ellipsize="end"
-                            android:gravity="end"
-                            android:id="@+id/txtAnoAula"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="@dimen/_3pxv"
-                            android:layout_marginEnd="@dimen/_1pxh"
-                            android:layout_marginStart="@dimen/_2pxh"
-                            android:layout_marginTop="@dimen/_6pxv"
-                            android:layout_width="match_parent"
-                            android:singleLine="true"
-                            android:text='@{agendaAlunoModel.data.year + ""}'
-                            style="@style/txtLexendPetaregular12" tools:text="@string/lbl_22"/>
-                    </LinearLayout>
+
                     <LinearLayout
                         android:gravity="center_horizontal"
                         android:id="@+id/linearColumneighteenAgenda"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_30pxh"
                         android:layout_weight="0.17"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:orientation="vertical" style="@style/groupStylewhite_1">
-                        <TextView android:ellipsize="end"
-                            android:gravity="center_horizontal"
+
+                        <TextView
                             android:id="@+id/txtHoraAula"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="@dimen/_3pxv"
+                            style="@style/txtLexendPetaregular12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2pxh"
+                            android:layout_marginTop="@dimen/_6pxv"
                             android:layout_marginEnd="@dimen/_2pxh"
-                            android:layout_marginStart="@dimen/_2pxh"
-                            android:layout_marginTop="@dimen/_6pxv"
-                            android:layout_width="match_parent"
-                            android:singleLine="true"
-                            android:text='@{agendaAlunoModel.data.hours + ""}'
-                            style="@style/txtLexendPetaregular12" tools:text="@string/lbl_18"/>
-                    </LinearLayout>
-                    <TextView android:ellipsize="end"
-                        android:id="@+id/txtThreeAgenda"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_3pxv"
-                        android:layout_marginTop="@dimen/_6pxv"
-                        android:layout_weight="0.05"
-                        android:layout_width="0dp"
-                        android:singleLine="true"
-                        android:text=":"
-                        style="@style/txtLexendPetaregular12" tools:text=":"/>
-                    <LinearLayout
-                        android:gravity="center_horizontal"
-                        android:id="@+id/linearColumnzeroAgenda"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.17"
-                        android:layout_width="0dp"
-                        android:orientation="vertical" style="@style/groupStylewhite_1">
-                        <TextView android:ellipsize="end"
-                            android:gravity="end"
-                            android:id="@+id/txtZeroAgenda"
-                            android:layout_height="match_parent"
                             android:layout_marginBottom="@dimen/_3pxv"
-                            android:layout_marginStart="@dimen/_2pxh"
-                            android:layout_marginTop="@dimen/_6pxv"
-                            android:layout_width="match_parent"
+                            android:ellipsize="end"
+                            android:gravity="center_horizontal"
                             android:singleLine="true"
-                            android:text='@{agendaAlunoModel.data.minutes + ""}'
-                            style="@style/txtLexendPetaregular12" tools:text="@string/lbl_00"/>
+                            android:text='@{agendaAlunoModel.data.hours + "" + agendaAlunoModel.data.minutes}'
+                            tools:text="18:30" />
                     </LinearLayout>
+
+
                 </LinearLayout>
                 <androidx.appcompat.widget.AppCompatRatingBar
                     android:id="@+id/ratingBarRatingbarAgenda"
