@@ -15,6 +15,8 @@ import com.application.app.modules.professores.data.model.ProfessoresRowModel
 import com.application.app.modules.professores.ui.ProfessoresActivity
 import com.lastcode.educame.infrastructure.network.AlunoApi
 import com.lastcode.educame.infrastructure.network.RetrofitHelper
+import com.squareup.moshi.JsonReader
+import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -81,8 +83,14 @@ class AgendaActivity : BaseActivity<ActivityAgendaBinding>(R.layout.activity_age
 
 
         agenda.forEach {
+          var dataString = it.data
+          dataString = "{ "+dataString+"Z }"
+          val jsonReader =Rfc3339DateJsonAdapter()
+
           val aula = AgendaAlunoModel(
-            data = it.data,
+
+//            data = Rfc3339DateJsonAdapter().nullSafe().fromJson("{${dataString}Z}"),
+            data = jsonReader.fromJson(dataString),
             emailProfessor = it.emailProfessor,
             nomeProfessor = it.nomeProfessor,
             nomeLive = it.nomeLive,

@@ -23,7 +23,7 @@ object RetrofitHelper {
 
     fun getInstance(): Retrofit {
         val moshi = Moshi.Builder()
-//            .add(Date::class.java, Rfc3339DateJsonAdapter().lenient().nullSafe())
+            .add(Date::class.java, Rfc3339DateJsonAdapter().lenient().nullSafe())
 //            .add(Date::class.java, CustomDateAdapter().nullSafe())
             .add(KotlinJsonAdapterFactory())
             .build()
