@@ -78,7 +78,7 @@
                             android:layout_marginTop="@dimen/_6pxv"
                             android:layout_width="match_parent"
                             android:singleLine="true"
-                            android:text="@{agendaAlunoModel.data.day}"
+                            android:text='@{agendaAlunoModel.data.day + ""}'
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_05"/>
                     </LinearLayout>
                     <TextView android:ellipsize="end"
@@ -108,7 +108,7 @@
                             android:layout_marginTop="@dimen/_6pxv"
                             android:layout_width="match_parent"
                             android:singleLine="true"
-                            android:text="@{agendaAlunoModel.data.month}"
+                            android:text='@{agendaAlunoModel.data.month + ""}'
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_07"/>
                     </LinearLayout>
                     <TextView android:ellipsize="end"
@@ -138,7 +138,7 @@
                             android:layout_marginTop="@dimen/_6pxv"
                             android:layout_width="match_parent"
                             android:singleLine="true"
-                            android:text="@{agendaAlunoModel.data.year}"
+                            android:text='@{agendaAlunoModel.data.year + ""}'
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_22"/>
                     </LinearLayout>
                     <LinearLayout
@@ -159,7 +159,7 @@
                             android:layout_marginTop="@dimen/_6pxv"
                             android:layout_width="match_parent"
                             android:singleLine="true"
-                            android:text="@{agendaAlunoModel.data.hours}"
+                            android:text='@{agendaAlunoModel.data.hours + ""}'
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_18"/>
                     </LinearLayout>
                     <TextView android:ellipsize="end"
@@ -188,7 +188,7 @@
                             android:layout_marginTop="@dimen/_6pxv"
                             android:layout_width="match_parent"
                             android:singleLine="true"
-                            android:text="@{agendaAlunoModel.data.minutes}"
+                            android:text='@{agendaAlunoModel.data.minutes + ""}'
                             style="@style/txtLexendPetaregular12" tools:text="@string/lbl_00"/>
                     </LinearLayout>
                 </LinearLayout>
