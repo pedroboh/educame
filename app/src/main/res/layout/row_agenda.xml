@@ -103,23 +103,12 @@
                             android:ellipsize="end"
                             android:gravity="center_horizontal"
                             android:singleLine="true"
-                            android:text='@{agendaAlunoModel.data.hours + "" + agendaAlunoModel.data.minutes}'
+                            android:text='@{agendaAlunoModel.data.hours + ":" + agendaAlunoModel.data.minutes}'
                             tools:text="18:30" />
                     </LinearLayout>
 
 
                 </LinearLayout>
-                <androidx.appcompat.widget.AppCompatRatingBar
-                    android:id="@+id/ratingBarRatingbarAgenda"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_6pxv"
-                    android:layout_marginStart="@dimen/_44pxh"
-                    android:layout_marginTop="@dimen/_4pxv"
-                    android:layout_weight="0.28"
-                    android:layout_width="0dp"
-                    android:numStars="5"
-                    android:progressTint="@color/bluegray_100"
-                    android:rating="5" style="@style/Widget.AppCompat.RatingBar.Small"/>
             </LinearLayout>
         </LinearLayout>
 
